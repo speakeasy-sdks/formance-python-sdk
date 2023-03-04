@@ -18,8 +18,7 @@ class Search:
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-
-    
+        
     def search(self, request: operations.SearchRequest) -> operations.SearchResponse:
         r"""Search
         ElasticSearch query engine
@@ -27,25 +26,25 @@ class Search:
         
         base_url = self._server_url
         
-        url = base_url.removesuffix("/") + "/api/search/"
+        url = base_url.removesuffix('/') + '/api/search/'
         
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request)
-        if req_content_type != "multipart/form-data" and req_content_type != "multipart/mixed":
-            headers["content-type"] = req_content_type
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
         if data is None and form is None:
-           raise Exception('request body is required')
+            raise Exception('request body is required')
         
         client = self._security_client
         
-        r = client.request("POST", url, data=data, files=form, headers=headers)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.SearchResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.SearchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.Response])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
         else:
             pass

@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import aggregatebalancesresponse as shared_aggregatebalancesresponse
 from ..shared import errorresponse as shared_errorresponse
 from typing import Optional
@@ -27,4 +28,5 @@ class GetBalancesAggregatedResponse:
     status_code: int = dataclasses.field()
     aggregate_balances_response: Optional[shared_aggregatebalancesresponse.AggregateBalancesResponse] = dataclasses.field(default=None)
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

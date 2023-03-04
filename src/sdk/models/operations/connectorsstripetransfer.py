@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import stripetransferrequest as shared_stripetransferrequest
 from typing import Any, Optional
 
@@ -13,5 +14,6 @@ class ConnectorsStripeTransferRequest:
 class ConnectorsStripeTransferResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     stripe_transfer_response: Optional[dict[str, Any]] = dataclasses.field(default=None)
     

@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import errorresponse as shared_errorresponse
 from typing import Any, Optional
 
@@ -24,7 +25,8 @@ class CountAccountsRequest:
 @dataclasses.dataclass
 class CountAccountsResponse:
     content_type: str = dataclasses.field()
-    headers: dict[str, list[str]] = dataclasses.field()
     status_code: int = dataclasses.field()
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
+    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

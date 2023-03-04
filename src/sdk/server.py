@@ -18,31 +18,30 @@ class Server:
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-
-    
+        
     def get_info(self) -> operations.GetInfoResponse:
         r"""Show server information
         """
         
         base_url = self._server_url
         
-        url = base_url.removesuffix("/") + "/api/ledger/_info"
+        url = base_url.removesuffix('/') + '/api/ledger/_info'
         
         
         client = self._security_client
         
-        r = client.request("GET", url)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetInfoResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.GetInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ConfigInfoResponse])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ConfigInfoResponse])
                 res.config_info_response = out
         else:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ErrorResponse])
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResponse])
                 res.error_response = out
 
         return res

@@ -18,8 +18,7 @@ class Script:
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-
-    
+        
     def run_script(self, request: operations.RunScriptRequest) -> operations.RunScriptResponse:
         r"""Execute a Numscript
         This route is deprecated, and has been merged into `POST /{ledger}/transactions`.
@@ -28,26 +27,26 @@ class Script:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, "/api/ledger/{ledger}/script", request.path_params)
+        url = utils.generate_url(base_url, '/api/ledger/{ledger}/script', request.path_params)
         
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request)
-        if req_content_type != "multipart/form-data" and req_content_type != "multipart/mixed":
-            headers["content-type"] = req_content_type
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
         if data is None and form is None:
-           raise Exception('request body is required')
+            raise Exception('request body is required')
         query_params = utils.get_query_params(request.query_params)
         
         client = self._security_client
         
-        r = client.request("POST", url, params=query_params, data=data, files=form, headers=headers)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.RunScriptResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.RunScriptResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ScriptResponse])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ScriptResponse])
                 res.script_response = out
 
         return res

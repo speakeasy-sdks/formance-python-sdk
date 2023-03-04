@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import connector_enum as shared_connector_enum
 from ..shared import taskresponse as shared_taskresponse
 from typing import Optional
@@ -20,5 +21,6 @@ class GetConnectorTaskRequest:
 class GetConnectorTaskResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     task_response: Optional[shared_taskresponse.TaskResponse] = dataclasses.field(default=None)
     

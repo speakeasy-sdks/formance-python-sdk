@@ -18,61 +18,59 @@ class Balances:
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-
-    
+        
     def get_balances(self, request: operations.GetBalancesRequest) -> operations.GetBalancesResponse:
         r"""Get the balances from a ledger's account
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, "/api/ledger/{ledger}/balances", request.path_params)
+        url = utils.generate_url(base_url, '/api/ledger/{ledger}/balances', request.path_params)
         
         query_params = utils.get_query_params(request.query_params)
         
         client = self._security_client
         
-        r = client.request("GET", url, params=query_params)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url, params=query_params)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetBalancesResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.GetBalancesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.BalancesCursorResponse])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.BalancesCursorResponse])
                 res.balances_cursor_response = out
         else:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ErrorResponse])
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResponse])
                 res.error_response = out
 
         return res
 
-    
     def get_balances_aggregated(self, request: operations.GetBalancesAggregatedRequest) -> operations.GetBalancesAggregatedResponse:
         r"""Get the aggregated balances from selected accounts
         """
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, "/api/ledger/{ledger}/aggregate/balances", request.path_params)
+        url = utils.generate_url(base_url, '/api/ledger/{ledger}/aggregate/balances', request.path_params)
         
         query_params = utils.get_query_params(request.query_params)
         
         client = self._security_client
         
-        r = client.request("GET", url, params=query_params)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url, params=query_params)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetBalancesAggregatedResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.GetBalancesAggregatedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.AggregateBalancesResponse])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.AggregateBalancesResponse])
                 res.aggregate_balances_response = out
         else:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ErrorResponse])
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResponse])
                 res.error_response = out
 
         return res

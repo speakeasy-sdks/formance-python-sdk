@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import getholdresponse as shared_getholdresponse
 from ..shared import walletserrorresponse as shared_walletserrorresponse
 from typing import Optional
@@ -20,5 +21,6 @@ class GetHoldResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_hold_response: Optional[shared_getholdresponse.GetHoldResponse] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     wallets_error_response: Optional[shared_walletserrorresponse.WalletsErrorResponse] = dataclasses.field(default=None)
     

@@ -1,7 +1,8 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import connector_enum as shared_connector_enum
-from typing import Any
+from typing import Any, Optional
 
 
 @dataclasses.dataclass
@@ -19,4 +20,5 @@ class InstallConnectorRequest:
 class InstallConnectorResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

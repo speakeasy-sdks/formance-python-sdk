@@ -7,6 +7,6 @@ from sdk import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class BalanceWithAssets:
-    assets: dict[str, float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('assets') }})
-    name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('name') }})
+    assets: dict[str, float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assets') }})
+    name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     

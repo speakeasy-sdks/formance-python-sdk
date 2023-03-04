@@ -18,8 +18,7 @@ class Stats:
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-
-    
+        
     def read_stats(self, request: operations.ReadStatsRequest) -> operations.ReadStatsResponse:
         r"""Get statistics from a ledger
         Get statistics from a ledger. (aggregate metrics on accounts and transactions)
@@ -28,23 +27,23 @@ class Stats:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, "/api/ledger/{ledger}/stats", request.path_params)
+        url = utils.generate_url(base_url, '/api/ledger/{ledger}/stats', request.path_params)
         
         
         client = self._security_client
         
-        r = client.request("GET", url)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.ReadStatsResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.ReadStatsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.StatsResponse])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.StatsResponse])
                 res.stats_response = out
         else:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ErrorResponse])
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResponse])
                 res.error_response = out
 
         return res

@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import updatescoperequest as shared_updatescoperequest
 from ..shared import updatescoperesponse as shared_updatescoperesponse
 from typing import Optional
@@ -20,5 +21,6 @@ class UpdateScopeRequest:
 class UpdateScopeResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     update_scope_response: Optional[shared_updatescoperesponse.UpdateScopeResponse] = dataclasses.field(default=None)
     

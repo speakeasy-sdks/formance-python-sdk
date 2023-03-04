@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import paymentresponse as shared_paymentresponse
 from typing import Optional
 
@@ -19,4 +20,5 @@ class GetPaymentResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     payment_response: Optional[shared_paymentresponse.PaymentResponse] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

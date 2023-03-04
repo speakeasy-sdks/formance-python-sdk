@@ -1,6 +1,7 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
+import requests
 from ..shared import errorresponse as shared_errorresponse
 from ..shared import logscursorresponse as shared_logscursorresponse
 from datetime import datetime
@@ -38,4 +39,5 @@ class ListLogsResponse:
     status_code: int = dataclasses.field()
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
     logs_cursor_response: Optional[shared_logscursorresponse.LogsCursorResponse] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

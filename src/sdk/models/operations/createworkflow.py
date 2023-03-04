@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import createworkflowrequest as shared_createworkflowrequest
 from ..shared import createworkflowresponse as shared_createworkflowresponse
 from ..shared import error as shared_error
@@ -17,4 +18,5 @@ class CreateWorkflowResponse:
     status_code: int = dataclasses.field()
     create_workflow_response: Optional[shared_createworkflowresponse.CreateWorkflowResponse] = dataclasses.field(default=None)
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

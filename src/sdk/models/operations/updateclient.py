@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import updateclientrequest as shared_updateclientrequest
 from ..shared import updateclientresponse as shared_updateclientresponse
 from typing import Optional
@@ -20,5 +21,6 @@ class UpdateClientRequest:
 class UpdateClientResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     update_client_response: Optional[shared_updateclientresponse.UpdateClientResponse] = dataclasses.field(default=None)
     

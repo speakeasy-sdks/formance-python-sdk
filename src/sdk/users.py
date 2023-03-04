@@ -18,8 +18,7 @@ class Users:
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-
-    
+        
     def list_users(self) -> operations.ListUsersResponse:
         r"""List users
         List users
@@ -27,24 +26,23 @@ class Users:
         
         base_url = self._server_url
         
-        url = base_url.removesuffix("/") + "/api/auth/users"
+        url = base_url.removesuffix('/') + '/api/auth/users'
         
         
         client = self._security_client
         
-        r = client.request("GET", url)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.ListUsersResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.ListUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ListUsersResponse])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ListUsersResponse])
                 res.list_users_response = out
 
         return res
 
-    
     def read_user(self, request: operations.ReadUserRequest) -> operations.ReadUserResponse:
         r"""Read user
         Read user
@@ -52,19 +50,19 @@ class Users:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, "/api/auth/users/{userId}", request.path_params)
+        url = utils.generate_url(base_url, '/api/auth/users/{userId}', request.path_params)
         
         
         client = self._security_client
         
-        r = client.request("GET", url)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.ReadUserResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.ReadUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ReadUserResponse])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ReadUserResponse])
                 res.read_user_response = out
 
         return res

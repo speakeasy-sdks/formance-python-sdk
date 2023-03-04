@@ -16,6 +16,7 @@ src/sdk/users.py
 src/sdk/wallets.py
 src/sdk/webhooks.py
 src/sdk/sdk.py
+pylintrc
 setup.py
 src/sdk/__init__.py
 src/sdk/models/__init__.py

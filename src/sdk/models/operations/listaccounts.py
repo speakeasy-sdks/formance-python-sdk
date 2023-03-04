@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import accountscursorresponse as shared_accountscursorresponse
 from ..shared import errorresponse as shared_errorresponse
 from enum import Enum
@@ -45,4 +46,5 @@ class ListAccountsResponse:
     status_code: int = dataclasses.field()
     accounts_cursor_response: Optional[shared_accountscursorresponse.AccountsCursorResponse] = dataclasses.field(default=None)
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

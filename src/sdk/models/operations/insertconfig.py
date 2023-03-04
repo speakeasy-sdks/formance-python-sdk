@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import configresponse as shared_configresponse
 from ..shared import configuser as shared_configuser
 from typing import Optional
@@ -16,4 +17,5 @@ class InsertConfigResponse:
     status_code: int = dataclasses.field()
     config_response: Optional[shared_configresponse.ConfigResponse] = dataclasses.field(default=None)
     insert_config_400_text_plain_string: Optional[str] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

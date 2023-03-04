@@ -7,6 +7,6 @@ from sdk import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Stats:
-    accounts: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('accounts') }})
-    transactions: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('transactions') }})
+    accounts: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
+    transactions: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions') }})
     

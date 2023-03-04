@@ -1,6 +1,7 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
+import requests
 from ..shared import errorresponse as shared_errorresponse
 from datetime import datetime
 from marshmallow import fields
@@ -34,7 +35,8 @@ class CountTransactionsRequest:
 @dataclasses.dataclass
 class CountTransactionsResponse:
     content_type: str = dataclasses.field()
-    headers: dict[str, list[str]] = dataclasses.field()
     status_code: int = dataclasses.field()
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
+    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import accountscursor as shared_accountscursor
 from typing import Optional
 
@@ -21,4 +22,5 @@ class PaymentslistAccountsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     accounts_cursor: Optional[shared_accountscursor.AccountsCursor] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

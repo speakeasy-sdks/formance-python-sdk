@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import attemptresponse as shared_attemptresponse
 from typing import Optional
 
@@ -19,4 +20,5 @@ class TestConfigResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     attempt_response: Optional[shared_attemptresponse.AttemptResponse] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

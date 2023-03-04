@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import errorresponse as shared_errorresponse
 from ..shared import posttransaction as shared_posttransaction
 from ..shared import transactionsresponse as shared_transactionsresponse
@@ -28,5 +29,6 @@ class CreateTransactionResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     transactions_response: Optional[shared_transactionsresponse.TransactionsResponse] = dataclasses.field(default=None)
     
