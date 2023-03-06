@@ -4,22 +4,20 @@
 ## SDK Installation
 
 ```bash
-pip install 
+pip install formance
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```python
-import sdk
-from sdk.models import operations, shared
+import formance
+from formance.models import operations, shared
 
-s = sdk.SDK()
+s = formance.Formance()
 s.config_security(
     security=shared.Security(
-        authorization=shared.SchemeAuthorization(
-            authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
-        ),
+        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     )
 )
     
@@ -33,7 +31,7 @@ if res.server_info is not None:
 <!-- Start SDK Available Operations -->
 ## SDK Available Operations
 
-### SDK SDK
+### Formance SDK
 
 * `get_server_info` - Get server info
 * `paymentsget_server_info` - Get server info
