@@ -1,6 +1,6 @@
 from __future__ import annotations
 import dataclasses
-import requests
+import requests as requests_http
 from ..shared import accountresponse as shared_accountresponse
 from ..shared import errorresponse as shared_errorresponse
 from typing import Optional
@@ -23,5 +23,5 @@ class GetAccountResponse:
     status_code: int = dataclasses.field()
     account_response: Optional[shared_accountresponse.AccountResponse] = dataclasses.field(default=None)
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

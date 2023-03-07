@@ -1,6 +1,6 @@
 from __future__ import annotations
 import dataclasses
-import requests
+import requests as requests_http
 from ..shared import errorresponse as shared_errorresponse
 from ..shared import transactions as shared_transactions
 from ..shared import transactionsresponse as shared_transactionsresponse
@@ -23,6 +23,6 @@ class CreateTransactionsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     transactions_response: Optional[shared_transactionsresponse.TransactionsResponse] = dataclasses.field(default=None)
     

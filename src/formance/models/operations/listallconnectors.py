@@ -1,6 +1,6 @@
 from __future__ import annotations
 import dataclasses
-import requests
+import requests as requests_http
 from ..shared import connectorsresponse as shared_connectorsresponse
 from typing import Optional
 
@@ -10,5 +10,5 @@ class ListAllConnectorsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     connectors_response: Optional[shared_connectorsresponse.ConnectorsResponse] = dataclasses.field(default=None)
-    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

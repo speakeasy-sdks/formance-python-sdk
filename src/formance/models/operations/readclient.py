@@ -1,6 +1,6 @@
 from __future__ import annotations
 import dataclasses
-import requests
+import requests as requests_http
 from ..shared import readclientresponse as shared_readclientresponse
 from typing import Optional
 
@@ -19,6 +19,6 @@ class ReadClientRequest:
 class ReadClientResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     read_client_response: Optional[shared_readclientresponse.ReadClientResponse] = dataclasses.field(default=None)
     

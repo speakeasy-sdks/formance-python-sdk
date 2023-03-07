@@ -1,6 +1,6 @@
 from __future__ import annotations
 import dataclasses
-import requests
+import requests as requests_http
 from ..shared import listbalancesresponse as shared_listbalancesresponse
 from typing import Optional
 
@@ -20,5 +20,5 @@ class ListBalancesResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     list_balances_response: Optional[shared_listbalancesresponse.ListBalancesResponse] = dataclasses.field(default=None)
-    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
