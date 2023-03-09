@@ -41,3 +41,11 @@ Based on:
 Based on:
 - OpenAPI Doc v1.0.0-rc.5 https://prod.speakeasyapi.dev/v1/apis/formance/version/v1.0.0/schema/download
 - Speakeasy CLI 1.8.5 https://github.com/speakeasy-api/speakeasy
+
+## 2023-03-09 09:42:49
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 ./stack.yaml
+- Speakeasy CLI 1.9.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v0.1.0] https://pypi.org/project/formance/0.1.0 - .
