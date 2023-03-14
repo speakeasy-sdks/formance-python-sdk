@@ -6,15 +6,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class PaymentslistAccountsQueryParams:
+class PaymentslistAccountsRequest:
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
     sort: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'sort', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class PaymentslistAccountsRequest:
-    query_params: PaymentslistAccountsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

@@ -7,14 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetConnectorTaskPathParams:
+class GetConnectorTaskRequest:
     connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
     task_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taskId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class GetConnectorTaskRequest:
-    path_params: GetConnectorTaskPathParams = dataclasses.field()
     
 
 @dataclasses.dataclass

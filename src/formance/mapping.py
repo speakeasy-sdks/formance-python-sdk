@@ -25,7 +25,7 @@ class Mapping:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/mapping', request.path_params)
+        url = utils.generate_url(operations.GetMappingRequest, base_url, '/api/ledger/{ledger}/mapping', request)
         
         
         client = self._security_client
@@ -52,10 +52,10 @@ class Mapping:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/mapping', request.path_params)
+        url = utils.generate_url(operations.UpdateMappingRequest, base_url, '/api/ledger/{ledger}/mapping', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "mapping", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

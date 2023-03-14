@@ -7,13 +7,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ReadStatsPathParams:
-    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class ReadStatsRequest:
-    path_params: ReadStatsPathParams = dataclasses.field()
+    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

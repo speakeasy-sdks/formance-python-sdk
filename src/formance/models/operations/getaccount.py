@@ -7,14 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetAccountPathParams:
+class GetAccountRequest:
     address: str = dataclasses.field(metadata={'path_param': { 'field_name': 'address', 'style': 'simple', 'explode': False }})
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class GetAccountRequest:
-    path_params: GetAccountPathParams = dataclasses.field()
     
 
 @dataclasses.dataclass

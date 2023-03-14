@@ -50,7 +50,7 @@ class Users:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/auth/users/{userId}', request.path_params)
+        url = utils.generate_url(operations.ReadUserRequest, base_url, '/api/auth/users/{userId}', request)
         
         
         client = self._security_client

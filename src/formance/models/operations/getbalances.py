@@ -7,22 +7,12 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetBalancesPathParams:
+class GetBalancesRequest:
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class GetBalancesQueryParams:
     address: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'address', 'style': 'form', 'explode': True }})
     after: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after', 'style': 'form', 'explode': True }})
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     pagination_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pagination_token', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class GetBalancesRequest:
-    path_params: GetBalancesPathParams = dataclasses.field()
-    query_params: GetBalancesQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

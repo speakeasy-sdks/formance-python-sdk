@@ -6,13 +6,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class UninstallConnectorPathParams:
-    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class UninstallConnectorRequest:
-    path_params: UninstallConnectorPathParams = dataclasses.field()
+    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

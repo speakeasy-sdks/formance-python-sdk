@@ -1,15 +1,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createclientrequest as shared_createclientrequest
 from ..shared import createclientresponse as shared_createclientresponse
 from typing import Optional
 
-
-@dataclasses.dataclass
-class CreateClientRequest:
-    request: Optional[shared_createclientrequest.CreateClientRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-    
 
 @dataclasses.dataclass
 class CreateClientResponse:

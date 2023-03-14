@@ -8,12 +8,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ListLogsPathParams:
+class ListLogsRequest:
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class ListLogsQueryParams:
     after: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after', 'style': 'form', 'explode': True }})
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     end_time: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'endTime', 'style': 'form', 'explode': True }})
@@ -23,12 +19,6 @@ class ListLogsQueryParams:
     pagination_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pagination_token', 'style': 'form', 'explode': True }})
     start_time: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'startTime', 'style': 'form', 'explode': True }})
     start_time_deprecated: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'start_time', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class ListLogsRequest:
-    path_params: ListLogsPathParams = dataclasses.field()
-    query_params: ListLogsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

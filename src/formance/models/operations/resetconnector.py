@@ -6,13 +6,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ResetConnectorPathParams:
-    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class ResetConnectorRequest:
-    path_params: ResetConnectorPathParams = dataclasses.field()
+    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

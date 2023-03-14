@@ -7,14 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class UpdateClientPathParams:
-    client_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'clientId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class UpdateClientRequest:
-    path_params: UpdateClientPathParams = dataclasses.field()
-    request: Optional[shared_updateclientrequest.UpdateClientRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    client_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'clientId', 'style': 'simple', 'explode': False }})
+    update_client_request: Optional[shared_updateclientrequest.UpdateClientRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

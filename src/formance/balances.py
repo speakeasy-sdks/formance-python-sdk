@@ -25,9 +25,9 @@ class Balances:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/balances', request.path_params)
+        url = utils.generate_url(operations.GetBalancesRequest, base_url, '/api/ledger/{ledger}/balances', request)
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.GetBalancesRequest, request)
         
         client = self._security_client
         
@@ -53,9 +53,9 @@ class Balances:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/aggregate/balances', request.path_params)
+        url = utils.generate_url(operations.GetBalancesAggregatedRequest, base_url, '/api/ledger/{ledger}/aggregate/balances', request)
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.GetBalancesAggregatedRequest, request)
         
         client = self._security_client
         

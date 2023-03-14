@@ -25,7 +25,7 @@ class Clients:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/auth/clients/{clientId}/scopes/{scopeId}', request.path_params)
+        url = utils.generate_url(operations.AddScopeToClientRequest, base_url, '/api/auth/clients/{clientId}/scopes/{scopeId}', request)
         
         
         client = self._security_client
@@ -40,7 +40,7 @@ class Clients:
 
         return res
 
-    def create_client(self, request: operations.CreateClientRequest) -> operations.CreateClientResponse:
+    def create_client(self, request: shared.CreateClientRequest) -> operations.CreateClientResponse:
         r"""Create client
         """
         
@@ -49,7 +49,7 @@ class Clients:
         url = base_url.removesuffix('/') + '/api/auth/clients'
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -73,10 +73,10 @@ class Clients:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/auth/clients/{clientId}/secrets', request.path_params)
+        url = utils.generate_url(operations.CreateSecretRequest, base_url, '/api/auth/clients/{clientId}/secrets', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "create_secret_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -100,7 +100,7 @@ class Clients:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/auth/clients/{clientId}', request.path_params)
+        url = utils.generate_url(operations.DeleteClientRequest, base_url, '/api/auth/clients/{clientId}', request)
         
         
         client = self._security_client
@@ -121,7 +121,7 @@ class Clients:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/auth/clients/{clientId}/scopes/{scopeId}', request.path_params)
+        url = utils.generate_url(operations.DeleteScopeFromClientRequest, base_url, '/api/auth/clients/{clientId}/scopes/{scopeId}', request)
         
         
         client = self._security_client
@@ -142,7 +142,7 @@ class Clients:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/auth/clients/{clientId}/secrets/{secretId}', request.path_params)
+        url = utils.generate_url(operations.DeleteSecretRequest, base_url, '/api/auth/clients/{clientId}/secrets/{secretId}', request)
         
         
         client = self._security_client
@@ -186,7 +186,7 @@ class Clients:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/auth/clients/{clientId}', request.path_params)
+        url = utils.generate_url(operations.ReadClientRequest, base_url, '/api/auth/clients/{clientId}', request)
         
         
         client = self._security_client
@@ -209,10 +209,10 @@ class Clients:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/auth/clients/{clientId}', request.path_params)
+        url = utils.generate_url(operations.UpdateClientRequest, base_url, '/api/auth/clients/{clientId}', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "update_client_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         

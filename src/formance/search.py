@@ -19,7 +19,7 @@ class Search:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def search(self, request: operations.SearchRequest) -> operations.SearchResponse:
+    def search(self, request: shared.Query) -> operations.SearchResponse:
         r"""Search
         ElasticSearch query engine
         """
@@ -29,7 +29,7 @@ class Search:
         url = base_url.removesuffix('/') + '/api/search/'
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

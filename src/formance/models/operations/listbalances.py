@@ -6,13 +6,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ListBalancesPathParams:
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class ListBalancesRequest:
-    path_params: ListBalancesPathParams = dataclasses.field()
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

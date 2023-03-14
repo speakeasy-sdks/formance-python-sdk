@@ -6,13 +6,8 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class ListRunsPathParams:
-    flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class ListRunsRequest:
-    path_params: ListRunsPathParams = dataclasses.field()
+    flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

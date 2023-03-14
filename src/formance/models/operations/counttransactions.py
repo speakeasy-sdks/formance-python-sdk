@@ -7,12 +7,8 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class CountTransactionsPathParams:
+class CountTransactionsRequest:
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class CountTransactionsQueryParams:
     account: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'account', 'style': 'form', 'explode': True }})
     destination: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'destination', 'style': 'form', 'explode': True }})
     end_time: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'endTime', 'style': 'form', 'explode': True }})
@@ -22,12 +18,6 @@ class CountTransactionsQueryParams:
     source: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'source', 'style': 'form', 'explode': True }})
     start_time: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'startTime', 'style': 'form', 'explode': True }})
     start_time_deprecated: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'start_time', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class CountTransactionsRequest:
-    path_params: CountTransactionsPathParams = dataclasses.field()
-    query_params: CountTransactionsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

@@ -27,7 +27,7 @@ class Stats:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/stats', request.path_params)
+        url = utils.generate_url(operations.ReadStatsRequest, base_url, '/api/ledger/{ledger}/stats', request)
         
         
         client = self._security_client

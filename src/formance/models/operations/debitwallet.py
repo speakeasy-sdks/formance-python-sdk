@@ -8,14 +8,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class DebitWalletPathParams:
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class DebitWalletRequest:
-    path_params: DebitWalletPathParams = dataclasses.field()
-    request: Optional[shared_debitwalletrequest.DebitWalletRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    debit_wallet_request: Optional[shared_debitwalletrequest.DebitWalletRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

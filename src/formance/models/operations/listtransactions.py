@@ -8,12 +8,8 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class ListTransactionsPathParams:
+class ListTransactionsRequest:
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class ListTransactionsQueryParams:
     account: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'account', 'style': 'form', 'explode': True }})
     after: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after', 'style': 'form', 'explode': True }})
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
@@ -28,12 +24,6 @@ class ListTransactionsQueryParams:
     source: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'source', 'style': 'form', 'explode': True }})
     start_time: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'startTime', 'style': 'form', 'explode': True }})
     start_time_deprecated: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'start_time', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class ListTransactionsRequest:
-    path_params: ListTransactionsPathParams = dataclasses.field()
-    query_params: ListTransactionsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

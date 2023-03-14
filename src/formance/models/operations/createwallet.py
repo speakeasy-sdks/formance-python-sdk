@@ -1,16 +1,10 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createwalletrequest as shared_createwalletrequest
 from ..shared import createwalletresponse as shared_createwalletresponse
 from ..shared import walletserrorresponse as shared_walletserrorresponse
 from typing import Optional
 
-
-@dataclasses.dataclass
-class CreateWalletRequest:
-    request: Optional[shared_createwalletrequest.CreateWalletRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-    
 
 @dataclasses.dataclass
 class CreateWalletResponse:

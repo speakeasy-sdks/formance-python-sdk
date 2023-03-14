@@ -7,19 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetBalancesAggregatedPathParams:
-    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class GetBalancesAggregatedQueryParams:
-    address: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'address', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
 class GetBalancesAggregatedRequest:
-    path_params: GetBalancesAggregatedPathParams = dataclasses.field()
-    query_params: GetBalancesAggregatedQueryParams = dataclasses.field()
+    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
+    address: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'address', 'style': 'form', 'explode': True }})
     
 
 @dataclasses.dataclass

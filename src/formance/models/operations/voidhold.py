@@ -6,13 +6,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class VoidHoldPathParams:
-    hold_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'hold_id', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class VoidHoldRequest:
-    path_params: VoidHoldPathParams = dataclasses.field()
+    hold_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'hold_id', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

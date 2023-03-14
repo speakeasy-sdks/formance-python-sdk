@@ -7,13 +7,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetFlowPathParams:
-    flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class GetFlowRequest:
-    path_params: GetFlowPathParams = dataclasses.field()
+    flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

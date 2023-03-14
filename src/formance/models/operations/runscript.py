@@ -7,20 +7,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class RunScriptPathParams:
-    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class RunScriptQueryParams:
-    preview: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'preview', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
 class RunScriptRequest:
-    path_params: RunScriptPathParams = dataclasses.field()
-    query_params: RunScriptQueryParams = dataclasses.field()
-    request: shared_script.Script = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
+    script: shared_script.Script = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    preview: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'preview', 'style': 'form', 'explode': True }})
     
 
 @dataclasses.dataclass

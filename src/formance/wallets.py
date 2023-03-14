@@ -25,10 +25,10 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/holds/{hold_id}/confirm', request.path_params)
+        url = utils.generate_url(operations.ConfirmHoldRequest, base_url, '/api/wallets/holds/{hold_id}/confirm', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "confirm_hold_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -54,10 +54,10 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/wallets/{id}/balances', request.path_params)
+        url = utils.generate_url(operations.CreateBalanceRequest, base_url, '/api/wallets/wallets/{id}/balances', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "create_balance_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -79,7 +79,7 @@ class Wallets:
 
         return res
 
-    def create_wallet(self, request: operations.CreateWalletRequest) -> operations.CreateWalletResponse:
+    def create_wallet(self, request: shared.CreateWalletRequest) -> operations.CreateWalletResponse:
         r"""Create a new wallet
         """
         
@@ -88,7 +88,7 @@ class Wallets:
         url = base_url.removesuffix('/') + '/api/wallets/wallets'
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -116,10 +116,10 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/wallets/{id}/credit', request.path_params)
+        url = utils.generate_url(operations.CreditWalletRequest, base_url, '/api/wallets/wallets/{id}/credit', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "credit_wallet_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -145,10 +145,10 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/wallets/{id}/debit', request.path_params)
+        url = utils.generate_url(operations.DebitWalletRequest, base_url, '/api/wallets/wallets/{id}/debit', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "debit_wallet_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -178,7 +178,7 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/wallets/{id}/balances/{balanceName}', request.path_params)
+        url = utils.generate_url(operations.GetBalanceRequest, base_url, '/api/wallets/wallets/{id}/balances/{balanceName}', request)
         
         
         client = self._security_client
@@ -205,7 +205,7 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/holds/{holdID}', request.path_params)
+        url = utils.generate_url(operations.GetHoldRequest, base_url, '/api/wallets/holds/{holdID}', request)
         
         
         client = self._security_client
@@ -234,7 +234,7 @@ class Wallets:
         
         url = base_url.removesuffix('/') + '/api/wallets/holds'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.GetHoldsRequest, request)
         
         client = self._security_client
         
@@ -259,7 +259,7 @@ class Wallets:
         
         url = base_url.removesuffix('/') + '/api/wallets/transactions'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.GetTransactionsRequest, request)
         
         client = self._security_client
         
@@ -285,7 +285,7 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/wallets/{id}', request.path_params)
+        url = utils.generate_url(operations.GetWalletRequest, base_url, '/api/wallets/wallets/{id}', request)
         
         
         client = self._security_client
@@ -314,7 +314,7 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/wallets/{id}/balances', request.path_params)
+        url = utils.generate_url(operations.ListBalancesRequest, base_url, '/api/wallets/wallets/{id}/balances', request)
         
         
         client = self._security_client
@@ -339,7 +339,7 @@ class Wallets:
         
         url = base_url.removesuffix('/') + '/api/wallets/wallets'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.ListWalletsRequest, request)
         
         client = self._security_client
         
@@ -361,10 +361,10 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/wallets/{id}', request.path_params)
+        url = utils.generate_url(operations.UpdateWalletRequest, base_url, '/api/wallets/wallets/{id}', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -390,7 +390,7 @@ class Wallets:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/wallets/holds/{hold_id}/void', request.path_params)
+        url = utils.generate_url(operations.VoidHoldRequest, base_url, '/api/wallets/holds/{hold_id}/void', request)
         
         
         client = self._security_client

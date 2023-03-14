@@ -8,14 +8,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class UpdateMappingPathParams:
-    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class UpdateMappingRequest:
-    path_params: UpdateMappingPathParams = dataclasses.field()
-    request: shared_mapping.Mapping = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
+    mapping: shared_mapping.Mapping = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

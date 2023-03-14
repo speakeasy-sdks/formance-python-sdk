@@ -25,10 +25,10 @@ class Transactions:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/transactions/batch', request.path_params)
+        url = utils.generate_url(operations.CreateTransactionsRequest, base_url, '/api/ledger/{ledger}/transactions/batch', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "transactions", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -58,10 +58,10 @@ class Transactions:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/transactions/{txid}/metadata', request.path_params)
+        url = utils.generate_url(operations.AddMetadataOnTransactionRequest, base_url, '/api/ledger/{ledger}/transactions/{txid}/metadata', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -87,9 +87,9 @@ class Transactions:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/transactions', request.path_params)
+        url = utils.generate_url(operations.CountTransactionsRequest, base_url, '/api/ledger/{ledger}/transactions', request)
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.CountTransactionsRequest, request)
         
         client = self._security_client
         
@@ -114,15 +114,15 @@ class Transactions:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/transactions', request.path_params)
+        url = utils.generate_url(operations.CreateTransactionRequest, base_url, '/api/ledger/{ledger}/transactions', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "post_transaction", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.CreateTransactionRequest, request)
         
         client = self._security_client
         
@@ -148,7 +148,7 @@ class Transactions:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/transactions/{txid}', request.path_params)
+        url = utils.generate_url(operations.GetTransactionRequest, base_url, '/api/ledger/{ledger}/transactions/{txid}', request)
         
         
         client = self._security_client
@@ -176,9 +176,9 @@ class Transactions:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/transactions', request.path_params)
+        url = utils.generate_url(operations.ListTransactionsRequest, base_url, '/api/ledger/{ledger}/transactions', request)
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.ListTransactionsRequest, request)
         
         client = self._security_client
         
@@ -204,7 +204,7 @@ class Transactions:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/transactions/{txid}/revert', request.path_params)
+        url = utils.generate_url(operations.RevertTransactionRequest, base_url, '/api/ledger/{ledger}/transactions/{txid}/revert', request)
         
         
         client = self._security_client
