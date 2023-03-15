@@ -8,7 +8,7 @@ generation:
   sdkClassName: formance
   sdkFlattening: true
 python:
-  version: 0.2.1
+  version: 0.2.2
   author: formance
   description: Python Client SDK for Formance API
   packageName: formance-python-sdk

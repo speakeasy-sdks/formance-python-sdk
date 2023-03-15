@@ -18,7 +18,7 @@
 ## SDK Installation
 
 ```bash
-pip install formance
+pip install formance-python-sdk
 ```
 <!-- End SDK Installation -->
 
