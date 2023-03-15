@@ -6,14 +6,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetManyConfigsQueryParams:
+class GetManyConfigsRequest:
     endpoint: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'endpoint', 'style': 'form', 'explode': True }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'id', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class GetManyConfigsRequest:
-    query_params: GetManyConfigsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

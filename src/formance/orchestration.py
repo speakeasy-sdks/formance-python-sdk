@@ -19,7 +19,7 @@ class Orchestration:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def create_workflow(self, request: operations.CreateWorkflowRequest) -> operations.CreateWorkflowResponse:
+    def create_workflow(self, request: shared.CreateWorkflowRequest) -> operations.CreateWorkflowResponse:
         r"""Create workflow
         Create a workflow
         """
@@ -29,7 +29,7 @@ class Orchestration:
         url = base_url.removesuffix('/') + '/api/orchestration/flows'
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -58,7 +58,7 @@ class Orchestration:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/orchestration/flows/{flowId}', request.path_params)
+        url = utils.generate_url(operations.GetFlowRequest, base_url, '/api/orchestration/flows/{flowId}', request)
         
         
         client = self._security_client
@@ -86,7 +86,7 @@ class Orchestration:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/orchestration/flows/{flowId}/runs/{runId}', request.path_params)
+        url = utils.generate_url(operations.GetWorkflowOccurrenceRequest, base_url, '/api/orchestration/flows/{flowId}/runs/{runId}', request)
         
         
         client = self._security_client
@@ -142,7 +142,7 @@ class Orchestration:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/orchestration/flows/{flowId}/runs', request.path_params)
+        url = utils.generate_url(operations.ListRunsRequest, base_url, '/api/orchestration/flows/{flowId}/runs', request)
         
         
         client = self._security_client
@@ -197,13 +197,13 @@ class Orchestration:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/orchestration/flows/{flowId}/runs', request.path_params)
+        url = utils.generate_url(operations.RunWorkflowRequest, base_url, '/api/orchestration/flows/{flowId}/runs', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.RunWorkflowRequest, request)
         
         client = self._security_client
         

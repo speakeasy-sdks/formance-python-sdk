@@ -7,11 +7,6 @@ from formance import utils
 from typing import Any, Optional
 
 
-@dataclasses.dataclass
-class UpdateWalletPathParams:
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class UpdateWalletRequestBody:
@@ -20,8 +15,8 @@ class UpdateWalletRequestBody:
 
 @dataclasses.dataclass
 class UpdateWalletRequest:
-    path_params: UpdateWalletPathParams = dataclasses.field()
-    request: Optional[UpdateWalletRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    request_body: Optional[UpdateWalletRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

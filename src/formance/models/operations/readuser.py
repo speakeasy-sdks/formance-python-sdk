@@ -6,13 +6,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ReadUserPathParams:
-    user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class ReadUserRequest:
-    path_params: ReadUserPathParams = dataclasses.field()
+    user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

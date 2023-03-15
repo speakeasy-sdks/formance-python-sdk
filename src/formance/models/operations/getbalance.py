@@ -7,14 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetBalancePathParams:
+class GetBalanceRequest:
     balance_name: str = dataclasses.field(metadata={'path_param': { 'field_name': 'balanceName', 'style': 'simple', 'explode': False }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class GetBalanceRequest:
-    path_params: GetBalancePathParams = dataclasses.field()
     
 
 @dataclasses.dataclass

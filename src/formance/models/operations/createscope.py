@@ -1,15 +1,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createscoperequest as shared_createscoperequest
 from ..shared import createscoperesponse as shared_createscoperesponse
 from typing import Optional
 
-
-@dataclasses.dataclass
-class CreateScopeRequest:
-    request: Optional[shared_createscoperequest.CreateScopeRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-    
 
 @dataclasses.dataclass
 class CreateScopeResponse:

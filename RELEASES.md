@@ -49,3 +49,35 @@ Based on:
 - Speakeasy CLI 1.9.0 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [PyPI v0.1.0] https://pypi.org/project/formance/0.1.0 - .
+
+## 2023-03-10 01:16:59
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 ./stack.yaml
+- Speakeasy CLI 1.9.1 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v0.1.1] https://pypi.org/project/formance/0.1.1 - .
+
+## 2023-03-11 01:06:06
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 ./stack.yaml
+- Speakeasy CLI 1.9.2 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v0.1.2] https://pypi.org/project/formance/0.1.2 - .
+
+## 2023-03-14 20:48:43
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 ./stack.yaml
+- Speakeasy CLI 1.11.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v0.2.0] https://pypi.org/project/formance/0.2.0 - .
+
+## 2023-03-15 04:35:07
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 ./stack.yaml
+- Speakeasy CLI 1.11.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v0.2.1] https://pypi.org/project/formance/0.2.1 - .

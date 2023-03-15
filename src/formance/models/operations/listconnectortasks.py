@@ -7,20 +7,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ListConnectorTasksPathParams:
+class ListConnectorTasksRequest:
     connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class ListConnectorTasksQueryParams:
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class ListConnectorTasksRequest:
-    path_params: ListConnectorTasksPathParams = dataclasses.field()
-    query_params: ListConnectorTasksQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

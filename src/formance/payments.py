@@ -19,7 +19,7 @@ class Payments:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def connectors_stripe_transfer(self, request: operations.ConnectorsStripeTransferRequest) -> operations.ConnectorsStripeTransferResponse:
+    def connectors_stripe_transfer(self, request: shared.StripeTransferRequest) -> operations.ConnectorsStripeTransferResponse:
         r"""Transfer funds between Stripe accounts
         Execute a transfer between two Stripe accounts.
         """
@@ -29,7 +29,7 @@ class Payments:
         url = base_url.removesuffix('/') + '/api/payments/connectors/stripe/transfer'
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -56,7 +56,7 @@ class Payments:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/payments/connectors/{connector}/tasks/{taskId}', request.path_params)
+        url = utils.generate_url(operations.GetConnectorTaskRequest, base_url, '/api/payments/connectors/{connector}/tasks/{taskId}', request)
         
         
         client = self._security_client
@@ -79,7 +79,7 @@ class Payments:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/payments/payments/{paymentId}', request.path_params)
+        url = utils.generate_url(operations.GetPaymentRequest, base_url, '/api/payments/payments/{paymentId}', request)
         
         
         client = self._security_client
@@ -103,10 +103,10 @@ class Payments:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/payments/connectors/{connector}', request.path_params)
+        url = utils.generate_url(operations.InstallConnectorRequest, base_url, '/api/payments/connectors/{connector}', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -179,9 +179,9 @@ class Payments:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/payments/connectors/{connector}/tasks', request.path_params)
+        url = utils.generate_url(operations.ListConnectorTasksRequest, base_url, '/api/payments/connectors/{connector}/tasks', request)
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.ListConnectorTasksRequest, request)
         
         client = self._security_client
         
@@ -205,7 +205,7 @@ class Payments:
         
         url = base_url.removesuffix('/') + '/api/payments/payments'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.ListPaymentsRequest, request)
         
         client = self._security_client
         
@@ -229,7 +229,7 @@ class Payments:
         
         url = base_url.removesuffix('/') + '/api/payments/accounts'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.PaymentslistAccountsRequest, request)
         
         client = self._security_client
         
@@ -252,7 +252,7 @@ class Payments:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/payments/connectors/{connector}/config', request.path_params)
+        url = utils.generate_url(operations.ReadConnectorConfigRequest, base_url, '/api/payments/connectors/{connector}/config', request)
         
         
         client = self._security_client
@@ -278,7 +278,7 @@ class Payments:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/payments/connectors/{connector}/reset', request.path_params)
+        url = utils.generate_url(operations.ResetConnectorRequest, base_url, '/api/payments/connectors/{connector}/reset', request)
         
         
         client = self._security_client
@@ -300,7 +300,7 @@ class Payments:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/payments/connectors/{connector}', request.path_params)
+        url = utils.generate_url(operations.UninstallConnectorRequest, base_url, '/api/payments/connectors/{connector}', request)
         
         
         client = self._security_client

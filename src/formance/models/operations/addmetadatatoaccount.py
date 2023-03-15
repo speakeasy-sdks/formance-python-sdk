@@ -6,15 +6,10 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class AddMetadataToAccountPathParams:
+class AddMetadataToAccountRequest:
     address: str = dataclasses.field(metadata={'path_param': { 'field_name': 'address', 'style': 'simple', 'explode': False }})
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class AddMetadataToAccountRequest:
-    path_params: AddMetadataToAccountPathParams = dataclasses.field()
-    request: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

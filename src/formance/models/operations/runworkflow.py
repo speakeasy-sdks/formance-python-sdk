@@ -7,20 +7,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class RunWorkflowPathParams:
-    flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class RunWorkflowQueryParams:
-    wait: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'wait', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
 class RunWorkflowRequest:
-    path_params: RunWorkflowPathParams = dataclasses.field()
-    query_params: RunWorkflowQueryParams = dataclasses.field()
-    request: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
+    request_body: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    wait: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'wait', 'style': 'form', 'explode': True }})
     
 
 @dataclasses.dataclass

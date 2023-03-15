@@ -8,14 +8,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateTransactionsPathParams:
-    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class CreateTransactionsRequest:
-    path_params: CreateTransactionsPathParams = dataclasses.field()
-    request: shared_transactions.Transactions = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
+    transactions: shared_transactions.Transactions = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

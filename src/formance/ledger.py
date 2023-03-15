@@ -25,7 +25,7 @@ class Ledger:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/ledger/{ledger}/_info', request.path_params)
+        url = utils.generate_url(operations.GetLedgerInfoRequest, base_url, '/api/ledger/{ledger}/_info', request)
         
         
         client = self._security_client

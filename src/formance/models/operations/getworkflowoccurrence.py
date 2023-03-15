@@ -7,14 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetWorkflowOccurrencePathParams:
+class GetWorkflowOccurrenceRequest:
     flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
     run_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'runId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class GetWorkflowOccurrenceRequest:
-    path_params: GetWorkflowOccurrencePathParams = dataclasses.field()
     
 
 @dataclasses.dataclass

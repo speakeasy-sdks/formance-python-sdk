@@ -6,16 +6,11 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class ListWalletsQueryParams:
+class ListWalletsRequest:
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'name', 'style': 'form', 'explode': True }})
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class ListWalletsRequest:
-    query_params: ListWalletsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

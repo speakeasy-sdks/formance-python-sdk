@@ -6,13 +6,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ActivateConfigPathParams:
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class ActivateConfigRequest:
-    path_params: ActivateConfigPathParams = dataclasses.field()
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

@@ -26,7 +26,7 @@ class Webhooks:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/webhooks/configs/{id}/activate', request.path_params)
+        url = utils.generate_url(operations.ActivateConfigRequest, base_url, '/api/webhooks/configs/{id}/activate', request)
         
         
         client = self._security_client
@@ -56,10 +56,10 @@ class Webhooks:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/webhooks/configs/{id}/secret/change', request.path_params)
+        url = utils.generate_url(operations.ChangeConfigSecretRequest, base_url, '/api/webhooks/configs/{id}/secret/change', request)
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "config_change_secret", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         
@@ -84,7 +84,7 @@ class Webhooks:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/webhooks/configs/{id}/deactivate', request.path_params)
+        url = utils.generate_url(operations.DeactivateConfigRequest, base_url, '/api/webhooks/configs/{id}/deactivate', request)
         
         
         client = self._security_client
@@ -110,7 +110,7 @@ class Webhooks:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/webhooks/configs/{id}', request.path_params)
+        url = utils.generate_url(operations.DeleteConfigRequest, base_url, '/api/webhooks/configs/{id}', request)
         
         
         client = self._security_client
@@ -134,7 +134,7 @@ class Webhooks:
         
         url = base_url.removesuffix('/') + '/api/webhooks/configs'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.GetManyConfigsRequest, request)
         
         client = self._security_client
         
@@ -150,7 +150,7 @@ class Webhooks:
 
         return res
 
-    def insert_config(self, request: operations.InsertConfigRequest) -> operations.InsertConfigResponse:
+    def insert_config(self, request: shared.ConfigUser) -> operations.InsertConfigResponse:
         r"""Insert a new config
         Insert a new webhooks config.
         
@@ -169,7 +169,7 @@ class Webhooks:
         url = base_url.removesuffix('/') + '/api/webhooks/configs'
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -199,7 +199,7 @@ class Webhooks:
         
         base_url = self._server_url
         
-        url = utils.generate_url(base_url, '/api/webhooks/configs/{id}/test', request.path_params)
+        url = utils.generate_url(operations.TestConfigRequest, base_url, '/api/webhooks/configs/{id}/test', request)
         
         
         client = self._security_client

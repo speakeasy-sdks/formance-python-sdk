@@ -7,14 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ConfirmHoldPathParams:
-    hold_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'hold_id', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class ConfirmHoldRequest:
-    path_params: ConfirmHoldPathParams = dataclasses.field()
-    request: Optional[shared_confirmholdrequest.ConfirmHoldRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    hold_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'hold_id', 'style': 'simple', 'explode': False }})
+    confirm_hold_request: Optional[shared_confirmholdrequest.ConfirmHoldRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

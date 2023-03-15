@@ -7,15 +7,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetTransactionsQueryParams:
+class GetTransactionsRequest:
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
     wallet_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'wallet_id', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class GetTransactionsRequest:
-    query_params: GetTransactionsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

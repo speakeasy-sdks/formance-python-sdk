@@ -7,14 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetTransactionPathParams:
+class GetTransactionRequest:
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
     txid: int = dataclasses.field(metadata={'path_param': { 'field_name': 'txid', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class GetTransactionRequest:
-    path_params: GetTransactionPathParams = dataclasses.field()
     
 
 @dataclasses.dataclass

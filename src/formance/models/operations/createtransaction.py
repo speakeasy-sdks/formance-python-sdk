@@ -8,20 +8,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateTransactionPathParams:
-    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class CreateTransactionQueryParams:
-    preview: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'preview', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
 class CreateTransactionRequest:
-    path_params: CreateTransactionPathParams = dataclasses.field()
-    query_params: CreateTransactionQueryParams = dataclasses.field()
-    request: shared_posttransaction.PostTransaction = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
+    post_transaction: shared_posttransaction.PostTransaction = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    preview: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'preview', 'style': 'form', 'explode': True }})
     
 
 @dataclasses.dataclass

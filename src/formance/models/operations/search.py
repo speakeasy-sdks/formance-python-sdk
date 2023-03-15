@@ -1,15 +1,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import query as shared_query
 from ..shared import response as shared_response
 from typing import Optional
 
-
-@dataclasses.dataclass
-class SearchRequest:
-    request: shared_query.Query = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    
 
 @dataclasses.dataclass
 class SearchResponse:

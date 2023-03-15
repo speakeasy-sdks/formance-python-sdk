@@ -5,13 +5,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class DeleteScopePathParams:
-    scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'scopeId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class DeleteScopeRequest:
-    path_params: DeleteScopePathParams = dataclasses.field()
+    scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'scopeId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

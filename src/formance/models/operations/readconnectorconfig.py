@@ -7,13 +7,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ReadConnectorConfigPathParams:
-    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class ReadConnectorConfigRequest:
-    path_params: ReadConnectorConfigPathParams = dataclasses.field()
+    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

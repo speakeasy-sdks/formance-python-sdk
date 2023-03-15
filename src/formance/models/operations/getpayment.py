@@ -6,13 +6,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetPaymentPathParams:
-    payment_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'paymentId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class GetPaymentRequest:
-    path_params: GetPaymentPathParams = dataclasses.field()
+    payment_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'paymentId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

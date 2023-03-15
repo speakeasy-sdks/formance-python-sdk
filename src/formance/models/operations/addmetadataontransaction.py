@@ -6,15 +6,10 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class AddMetadataOnTransactionPathParams:
+class AddMetadataOnTransactionRequest:
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
     txid: int = dataclasses.field(metadata={'path_param': { 'field_name': 'txid', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class AddMetadataOnTransactionRequest:
-    path_params: AddMetadataOnTransactionPathParams = dataclasses.field()
-    request: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

@@ -7,16 +7,11 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class GetHoldsQueryParams:
+class GetHoldsRequest:
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
     wallet_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'walletID', 'style': 'form', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class GetHoldsRequest:
-    query_params: GetHoldsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

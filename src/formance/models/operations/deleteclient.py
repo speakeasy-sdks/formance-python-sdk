@@ -5,13 +5,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class DeleteClientPathParams:
-    client_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'clientId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class DeleteClientRequest:
-    path_params: DeleteClientPathParams = dataclasses.field()
+    client_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'clientId', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

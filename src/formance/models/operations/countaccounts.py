@@ -6,20 +6,10 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class CountAccountsPathParams:
+class CountAccountsRequest:
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class CountAccountsQueryParams:
     address: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'address', 'style': 'form', 'explode': True }})
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
-    
-
-@dataclasses.dataclass
-class CountAccountsRequest:
-    path_params: CountAccountsPathParams = dataclasses.field()
-    query_params: CountAccountsQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

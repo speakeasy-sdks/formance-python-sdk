@@ -7,13 +7,8 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetHoldPathParams:
-    hold_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'holdID', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class GetHoldRequest:
-    path_params: GetHoldPathParams = dataclasses.field()
+    hold_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'holdID', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass

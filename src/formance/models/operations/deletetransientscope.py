@@ -5,14 +5,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class DeleteTransientScopePathParams:
+class DeleteTransientScopeRequest:
     scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'scopeId', 'style': 'simple', 'explode': False }})
     transient_scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'transientScopeId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
-class DeleteTransientScopeRequest:
-    path_params: DeleteTransientScopePathParams = dataclasses.field()
     
 
 @dataclasses.dataclass

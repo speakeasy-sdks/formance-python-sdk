@@ -8,14 +8,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateBalancePathParams:
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class CreateBalanceRequest:
-    path_params: CreateBalancePathParams = dataclasses.field()
-    request: Optional[shared_createbalancerequest.CreateBalanceRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    create_balance_request: Optional[shared_createbalancerequest.CreateBalanceRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

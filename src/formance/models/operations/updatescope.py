@@ -7,14 +7,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class UpdateScopePathParams:
-    scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'scopeId', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class UpdateScopeRequest:
-    path_params: UpdateScopePathParams = dataclasses.field()
-    request: Optional[shared_updatescoperequest.UpdateScopeRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'scopeId', 'style': 'simple', 'explode': False }})
+    update_scope_request: Optional[shared_updatescoperequest.UpdateScopeRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

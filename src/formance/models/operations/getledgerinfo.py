@@ -6,13 +6,8 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class GetLedgerInfoPathParams:
-    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    
-
-@dataclasses.dataclass
 class GetLedgerInfoRequest:
-    path_params: GetLedgerInfoPathParams = dataclasses.field()
+    ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
     
 
 @dataclasses.dataclass
