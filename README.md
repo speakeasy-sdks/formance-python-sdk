@@ -12,8 +12,6 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
 </div>
 
-***Please note that the following installation example with pip is illustrative and will not download a package until a publishing token is provided as a github secret. To test out the repo you may clone it locally and run `pip install -e ../path/to/local/clone/` .***
-
 <!-- Start SDK Installation -->
 ## SDK Installation
 
