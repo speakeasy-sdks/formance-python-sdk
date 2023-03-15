@@ -20,6 +20,8 @@ pip install formance-python-sdk
 ```
 <!-- End SDK Installation -->
 
+[![Run on Repl.it](https://repl.it/badge/github/speakeasy-sdks/formance-python-sdk)](https://replit.com/join/edjyvnqhol-sagarbatchu1)
+
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```python
@@ -32,7 +34,6 @@ s = formance.Formance(
     ),
 )
 
-    
 res = s.get_server_info()
 
 if res.server_info is not None:
