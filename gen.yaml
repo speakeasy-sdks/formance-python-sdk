@@ -11,4 +11,4 @@ python:
   version: 0.2.1
   author: formance
   description: Python Client SDK for Formance API
-  packageName: formance
+  packageName: formance-python-sdk
