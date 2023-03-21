@@ -8,7 +8,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="formance-python-sdk",
-    version="0.3.1",
+    version="0.3.2",
     author="formance",
     description="Python Client SDK for Formance API",
     long_description=long_description,
