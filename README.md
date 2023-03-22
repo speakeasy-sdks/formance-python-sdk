@@ -34,6 +34,7 @@ s = formance.Formance(
     ),
 )
 
+    
 res = s.get_server_info()
 
 if res.server_info is not None:
