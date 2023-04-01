@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import webhooksconfig as shared_webhooksconfig
+from ..shared import workflowoccurrence as shared_workflowoccurrence
 from dataclasses_json import Undefined, dataclass_json
 from formance import utils
 from typing import Optional
@@ -10,9 +10,9 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ConfigsResponseCursor:
+class ListRunsResponseCursor:
     
-    data: list[shared_webhooksconfig.WebhooksConfig] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
+    data: list[shared_workflowoccurrence.WorkflowOccurrence] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
     page_size: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize') }})  
     has_more: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hasMore'), 'exclude': lambda f: f is None }})  
     next: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next'), 'exclude': lambda f: f is None }})  
@@ -21,8 +21,8 @@ class ConfigsResponseCursor:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ConfigsResponse:
-    r"""OK"""
+class ListRunsResponse:
+    r"""List of workflow occurrences"""
     
-    cursor: ConfigsResponseCursor = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cursor') }})  
+    cursor: ListRunsResponseCursor = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cursor') }})  
     

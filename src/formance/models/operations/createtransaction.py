@@ -18,7 +18,6 @@ class CreateTransactionRequest:
     r"""The request body must contain at least one of the following objects:
       - `postings`: suitable for simple transactions
       - `script`: enabling more complex transactions with Numscript
-    
     """  
     preview: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'preview', 'style': 'form', 'explode': True }})
     r"""Set the preview mode. Preview mode doesn't add the logs to the database or publish a message to the message broker."""  

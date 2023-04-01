@@ -42,7 +42,6 @@ class Formance:
     OAuth2 - an open protocol to allow secure authorization in a simple
     and standard method from web, mobile and desktop applications.
     <SecurityDefinitions />
-    
     """
     accounts: Accounts
     r"""Everything related to Accounts"""
@@ -83,8 +82,8 @@ class Formance:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "0.3.1"
-    _gen_version: str = "2.13.0"
+    _sdk_version: str = "0.4.0"
+    _gen_version: str = "2.16.7"
 
     def __init__(self,
                  security: shared.Security = None,

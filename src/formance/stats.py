@@ -25,7 +25,6 @@ class Stats:
     def read_stats(self, request: operations.ReadStatsRequest) -> operations.ReadStatsResponse:
         r"""Get statistics from a ledger
         Get statistics from a ledger. (aggregate metrics on accounts and transactions)
-        
         """
         base_url = self._server_url
         

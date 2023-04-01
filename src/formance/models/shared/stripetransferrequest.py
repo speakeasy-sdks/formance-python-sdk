@@ -17,6 +17,5 @@ class StripeTransferRequest:
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key/value pairs that you can attach to a transfer object.
     It can be useful for storing additional information about the transfer in a structured format.
-    
     """  
     

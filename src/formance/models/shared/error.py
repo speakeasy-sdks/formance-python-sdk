@@ -7,7 +7,7 @@ from enum import Enum
 from formance import utils
 
 class ErrorErrorCodeEnum(str, Enum):
-    VALIDATION = "VALIDATION"
+    VALIDATION = 'VALIDATION'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

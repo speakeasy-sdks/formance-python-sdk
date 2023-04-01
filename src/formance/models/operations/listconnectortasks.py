@@ -18,12 +18,9 @@ class ListConnectorTasksRequest:
     Set to the value of next for the next page of results.
     Set to the value of previous for the previous page of results.
     No other parameters can be set when this parameter is set.
-    
     """  
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
-    r"""The maximum number of results to return per page.
-    
-    """  
+    r"""The maximum number of results to return per page."""  
     
 
 @dataclasses.dataclass

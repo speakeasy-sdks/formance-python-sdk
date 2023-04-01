@@ -43,7 +43,7 @@ if res.server_info is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 ### Formance SDK
 

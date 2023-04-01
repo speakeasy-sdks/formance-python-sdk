@@ -3,7 +3,7 @@
 import requests as requests_http
 from . import utils
 from formance.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class Orchestration:
     r"""Everything related to Orchestration"""
@@ -152,7 +152,7 @@ class Orchestration:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ListRunsResponse])
                 res.list_runs_response = out
         else:
             if utils.match_content_type(content_type, 'application/json'):

@@ -15,30 +15,30 @@ from marshmallow import fields
 from typing import Any
 
 class PaymentSchemeEnum(str, Enum):
-    VISA = "visa"
-    MASTERCARD = "mastercard"
-    AMEX = "amex"
-    DINERS = "diners"
-    DISCOVER = "discover"
-    JCB = "jcb"
-    UNIONPAY = "unionpay"
-    SEPA_DEBIT = "sepa debit"
-    SEPA_CREDIT = "sepa credit"
-    SEPA = "sepa"
-    APPLE_PAY = "apple pay"
-    GOOGLE_PAY = "google pay"
-    A2A = "a2a"
-    ACH_DEBIT = "ach debit"
-    ACH = "ach"
-    RTP = "rtp"
-    UNKNOWN = "unknown"
-    OTHER = "other"
+    VISA = 'visa'
+    MASTERCARD = 'mastercard'
+    AMEX = 'amex'
+    DINERS = 'diners'
+    DISCOVER = 'discover'
+    JCB = 'jcb'
+    UNIONPAY = 'unionpay'
+    SEPA_DEBIT = 'sepa debit'
+    SEPA_CREDIT = 'sepa credit'
+    SEPA = 'sepa'
+    APPLE_PAY = 'apple pay'
+    GOOGLE_PAY = 'google pay'
+    A2A = 'a2a'
+    ACH_DEBIT = 'ach debit'
+    ACH = 'ach'
+    RTP = 'rtp'
+    UNKNOWN = 'unknown'
+    OTHER = 'other'
 
 class PaymentTypeEnum(str, Enum):
-    PAY_IN = "PAY-IN"
-    PAYOUT = "PAYOUT"
-    TRANSFER = "TRANSFER"
-    OTHER = "OTHER"
+    PAY_IN = 'PAY-IN'
+    PAYOUT = 'PAYOUT'
+    TRANSFER = 'TRANSFER'
+    OTHER = 'OTHER'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

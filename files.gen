@@ -126,6 +126,9 @@ src/formance/models/shared/listclientsresponse.py
 src/formance/models/shared/readclientresponse.py
 src/formance/models/shared/updateclientresponse.py
 src/formance/models/shared/updateclientrequest.py
+src/formance/models/shared/ledgerinforesponse.py
+src/formance/models/shared/ledgerinfo.py
+src/formance/models/shared/migrationinfo.py
 src/formance/models/shared/logscursorresponse.py
 src/formance/models/shared/log.py
 src/formance/models/shared/mappingresponse.py
@@ -141,6 +144,7 @@ src/formance/models/shared/getworkflowoccurrenceresponse.py
 src/formance/models/shared/workflowoccurrence.py
 src/formance/models/shared/stagestatus.py
 src/formance/models/shared/listworkflowsresponse.py
+src/formance/models/shared/listrunsresponse.py
 src/formance/models/shared/serverinfo.py
 src/formance/models/shared/runworkflowresponse.py
 src/formance/models/shared/stripetransferrequest.py
@@ -209,6 +213,8 @@ src/formance/models/shared/createwalletresponse.py
 src/formance/models/shared/wallet.py
 src/formance/models/shared/createwalletrequest.py
 src/formance/models/shared/creditwalletrequest.py
+src/formance/models/shared/ledgeraccountsubject.py
+src/formance/models/shared/walletsubject.py
 src/formance/models/shared/monetary.py
 src/formance/models/shared/debitwalletresponse.py
 src/formance/models/shared/hold.py
@@ -227,10 +233,12 @@ src/formance/models/shared/assetholder.py
 src/formance/models/shared/listbalancesresponse.py
 src/formance/models/shared/listwalletsresponse.py
 src/formance/models/shared/configresponse.py
+src/formance/models/shared/webhooksconfig.py
 src/formance/models/shared/configchangesecret.py
 src/formance/models/shared/configsresponse.py
 src/formance/models/shared/configuser.py
 src/formance/models/shared/attemptresponse.py
+src/formance/models/shared/attempt.py
 src/formance/models/shared/security.py
 src/formance/models/shared/__init__.py
 USAGE.md

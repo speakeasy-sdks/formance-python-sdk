@@ -25,7 +25,6 @@ class PostTransaction:
     r"""The request body must contain at least one of the following objects:
       - `postings`: suitable for simple transactions
       - `script`: enabling more complex transactions with Numscript
-    
     """
     
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})  

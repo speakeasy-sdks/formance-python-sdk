@@ -4,7 +4,8 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import error as shared_error
-from typing import Any, Optional
+from ..shared import listrunsresponse as shared_listrunsresponse
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -21,7 +22,7 @@ class ListRunsResponse:
     status_code: int = dataclasses.field()  
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""General error"""  
-    list_runs_response: Optional[Any] = dataclasses.field(default=None)
+    list_runs_response: Optional[shared_listrunsresponse.ListRunsResponse] = dataclasses.field(default=None)
     r"""List of workflow occurrences"""  
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
     

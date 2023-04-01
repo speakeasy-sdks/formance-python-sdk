@@ -15,7 +15,6 @@ class ListWalletsRequest:
     Set to the value of next for the next page of results.
     Set to the value of previous for the previous page of results.
     No other parameters can be set when the pagination token is set.
-    
     """  
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
     r"""Filter wallets by metadata key value pairs. Nested objects can be used as seen in the example below."""  

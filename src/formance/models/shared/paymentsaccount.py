@@ -11,8 +11,8 @@ from formance import utils
 from marshmallow import fields
 
 class PaymentsAccountTypeEnum(str, Enum):
-    TARGET = "TARGET"
-    SOURCE = "SOURCE"
+    TARGET = 'TARGET'
+    SOURCE = 'SOURCE'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

@@ -117,8 +117,6 @@ class Payments:
 
         res = operations.InstallConnectorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 204:
-            pass
 
         return res
 
@@ -263,7 +261,6 @@ class Payments:
         r"""Reset a connector
         Reset a connector by its name.
         It will remove the connector and ALL PAYMENTS generated with it.
-        
         """
         base_url = self._server_url
         
@@ -277,8 +274,6 @@ class Payments:
 
         res = operations.ResetConnectorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 204:
-            pass
 
         return res
 
@@ -298,8 +293,6 @@ class Payments:
 
         res = operations.UninstallConnectorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 204:
-            pass
 
         return res
 

@@ -15,7 +15,6 @@ class AddMetadataToAccountRequest:
     ```
     ^\w+(:\w+)*$
     ```
-    
     """  
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
     r"""Name of the ledger."""  

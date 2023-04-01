@@ -53,7 +53,6 @@ class Webhooks:
         
         If not passed or empty, a secret is automatically generated.
         The format is a random string of bytes of size 24, base64 encoded. (larger size after encoding)
-        
         """
         base_url = self._server_url
         
@@ -119,8 +118,6 @@ class Webhooks:
 
         res = operations.DeleteConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
-            pass
 
         return res
 
@@ -159,7 +156,6 @@ class Webhooks:
         The format is a random string of bytes of size 24, base64 encoded. (larger size after encoding)
         
         All eventTypes are converted to lower-case when inserted.
-        
         """
         base_url = self._server_url
         
