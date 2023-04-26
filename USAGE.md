@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import formance
-from formance.models import operations, shared
+
 
 s = formance.Formance(
     security=shared.Security(
@@ -9,7 +9,7 @@ s = formance.Formance(
     ),
 )
 
-    
+
 res = s.get_server_info()
 
 if res.server_info is not None:
