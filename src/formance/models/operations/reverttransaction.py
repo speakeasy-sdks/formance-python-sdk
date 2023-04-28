@@ -12,19 +12,26 @@ from typing import Optional
 class RevertTransactionRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    r"""Name of the ledger."""  
+
+    r"""Name of the ledger."""
     txid: int = dataclasses.field(metadata={'path_param': { 'field_name': 'txid', 'style': 'simple', 'explode': False }})
-    r"""Transaction ID."""  
+
+    r"""Transaction ID."""
     
 
 @dataclasses.dataclass
 class RevertTransactionResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    r"""Error"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Error"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     transaction_response: Optional[shared_transactionresponse.TransactionResponse] = dataclasses.field(default=None)
-    r"""OK"""  
+
+    r"""OK"""
     

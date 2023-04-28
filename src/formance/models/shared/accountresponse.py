@@ -12,5 +12,6 @@ from formance import utils
 class AccountResponse:
     r"""OK"""
     
-    data: shared_accountwithvolumesandbalances.AccountWithVolumesAndBalances = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
+    data: shared_accountwithvolumesandbalances.AccountWithVolumesAndBalances = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
+
     

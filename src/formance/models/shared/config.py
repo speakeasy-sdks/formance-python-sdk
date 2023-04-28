@@ -11,5 +11,6 @@ from formance import utils
 @dataclasses.dataclass
 class Config:
     
-    storage: shared_ledgerstorage.LedgerStorage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storage') }})  
+    storage: shared_ledgerstorage.LedgerStorage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storage') }})
+
     

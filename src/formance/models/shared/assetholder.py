@@ -10,5 +10,6 @@ from formance import utils
 @dataclasses.dataclass
 class AssetHolder:
     
-    assets: dict[str, float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assets') }})  
+    assets: dict[str, float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assets') }})
+
     

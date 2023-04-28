@@ -10,15 +10,20 @@ from typing import Optional
 class AddScopeToClientRequest:
     
     client_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'clientId', 'style': 'simple', 'explode': False }})
-    r"""Client ID"""  
+
+    r"""Client ID"""
     scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'scopeId', 'style': 'simple', 'explode': False }})
-    r"""Scope ID"""  
+
+    r"""Scope ID"""
     
 
 @dataclasses.dataclass
 class AddScopeToClientResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

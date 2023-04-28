@@ -12,16 +12,22 @@ from typing import Optional
 class ChangeConfigSecretRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Config ID"""  
-    config_change_secret: Optional[shared_configchangesecret.ConfigChangeSecret] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+
+    r"""Config ID"""
+    config_change_secret: Optional[shared_configchangesecret.ConfigChangeSecret] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+
     
 
 @dataclasses.dataclass
 class ChangeConfigSecretResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     config_response: Optional[shared_configresponse.ConfigResponse] = dataclasses.field(default=None)
-    r"""Secret successfully changed."""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Secret successfully changed."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

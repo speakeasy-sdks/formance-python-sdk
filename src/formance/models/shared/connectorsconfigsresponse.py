@@ -10,22 +10,26 @@ from formance import utils
 @dataclasses.dataclass
 class ConnectorsConfigsResponseDataConnectorKey:
     
-    data_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dataType') }})  
-    required: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('required') }})  
+    data_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dataType') }})
+
+    required: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('required') }})
+
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ConnectorsConfigsResponseDataConnector:
     
-    key: ConnectorsConfigsResponseDataConnectorKey = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})  
+    key: ConnectorsConfigsResponseDataConnectorKey = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
+
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ConnectorsConfigsResponseData:
     
-    connector: ConnectorsConfigsResponseDataConnector = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connector') }})  
+    connector: ConnectorsConfigsResponseDataConnector = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connector') }})
+
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -33,5 +37,6 @@ class ConnectorsConfigsResponseData:
 class ConnectorsConfigsResponse:
     r"""OK"""
     
-    data: ConnectorsConfigsResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
+    data: ConnectorsConfigsResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
+
     

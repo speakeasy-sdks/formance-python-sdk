@@ -11,13 +11,17 @@ from typing import Optional
 class ResetConnectorRequest:
     
     connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
-    r"""The name of the connector."""  
+
+    r"""The name of the connector."""
     
 
 @dataclasses.dataclass
 class ResetConnectorResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

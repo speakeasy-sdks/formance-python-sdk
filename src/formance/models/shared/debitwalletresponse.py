@@ -12,5 +12,6 @@ from formance import utils
 class DebitWalletResponse:
     r"""Wallet successfully debited as a pending hold"""
     
-    data: shared_hold.Hold = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
+    data: shared_hold.Hold = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
+
     

@@ -11,20 +11,28 @@ from typing import Any, Optional
 class CountAccountsRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    r"""Name of the ledger."""  
+
+    r"""Name of the ledger."""
     address: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'address', 'style': 'form', 'explode': True }})
-    r"""Filter accounts by address pattern (regular expression placed between ^ and $)."""  
+
+    r"""Filter accounts by address pattern (regular expression placed between ^ and $)."""
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
-    r"""Filter accounts by metadata key value pairs. Nested objects can be used as seen in the example below."""  
+
+    r"""Filter accounts by metadata key value pairs. Nested objects can be used as seen in the example below."""
     
 
 @dataclasses.dataclass
 class CountAccountsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    r"""Error"""  
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Error"""
+    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

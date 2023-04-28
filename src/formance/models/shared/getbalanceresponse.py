@@ -12,5 +12,6 @@ from formance import utils
 class GetBalanceResponse:
     r"""Balance summary"""
     
-    data: shared_balancewithassets.BalanceWithAssets = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
+    data: shared_balancewithassets.BalanceWithAssets = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
+
     

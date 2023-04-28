@@ -10,15 +10,20 @@ from typing import Optional
 class DeleteTransientScopeRequest:
     
     scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'scopeId', 'style': 'simple', 'explode': False }})
-    r"""Scope ID"""  
+
+    r"""Scope ID"""
     transient_scope_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'transientScopeId', 'style': 'simple', 'explode': False }})
-    r"""Transient scope ID"""  
+
+    r"""Transient scope ID"""
     
 
 @dataclasses.dataclass
 class DeleteTransientScopeResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

@@ -10,6 +10,8 @@ from formance import utils
 @dataclasses.dataclass
 class Stats:
     
-    accounts: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})  
-    transactions: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions') }})  
+    accounts: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
+
+    transactions: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions') }})
+
     

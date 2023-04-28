@@ -15,6 +15,8 @@ class WalletsErrorResponseErrorCodeEnum(str, Enum):
 class WalletsErrorResponse:
     r"""Error"""
     
-    error_code: WalletsErrorResponseErrorCodeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorCode') }})  
-    error_message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorMessage') }})  
+    error_code: WalletsErrorResponseErrorCodeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorCode') }})
+
+    error_message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorMessage') }})
+
     

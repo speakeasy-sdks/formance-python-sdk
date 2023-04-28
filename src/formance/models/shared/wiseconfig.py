@@ -10,5 +10,6 @@ from formance import utils
 @dataclasses.dataclass
 class WiseConfig:
     
-    api_key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiKey') }})  
+    api_key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiKey') }})
+
     

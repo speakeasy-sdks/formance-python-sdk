@@ -10,9 +10,13 @@ from typing import Optional
 @dataclasses.dataclass
 class ListClientsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     list_clients_response: Optional[shared_listclientsresponse.ListClientsResponse] = dataclasses.field(default=None)
-    r"""List of clients"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""List of clients"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

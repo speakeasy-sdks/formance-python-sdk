@@ -11,5 +11,6 @@ from formance import utils
 class AggregateBalancesResponse:
     r"""OK"""
     
-    data: dict[str, int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
+    data: dict[str, int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
+
     

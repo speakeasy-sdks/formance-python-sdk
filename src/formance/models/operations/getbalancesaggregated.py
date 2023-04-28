@@ -12,19 +12,26 @@ from typing import Optional
 class GetBalancesAggregatedRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    r"""Name of the ledger."""  
+
+    r"""Name of the ledger."""
     address: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'address', 'style': 'form', 'explode': True }})
-    r"""Filter balances involving given account, either as source or destination."""  
+
+    r"""Filter balances involving given account, either as source or destination."""
     
 
 @dataclasses.dataclass
 class GetBalancesAggregatedResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     aggregate_balances_response: Optional[shared_aggregatebalancesresponse.AggregateBalancesResponse] = dataclasses.field(default=None)
-    r"""OK"""  
+
+    r"""OK"""
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    r"""Error"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Error"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

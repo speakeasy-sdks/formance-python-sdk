@@ -12,17 +12,23 @@ from typing import Optional
 class GetMappingRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    r"""Name of the ledger."""  
+
+    r"""Name of the ledger."""
     
 
 @dataclasses.dataclass
 class GetMappingResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    r"""Error"""  
+
+    r"""Error"""
     mapping_response: Optional[shared_mappingresponse.MappingResponse] = dataclasses.field(default=None)
-    r"""OK"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""OK"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

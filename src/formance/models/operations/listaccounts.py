@@ -22,50 +22,66 @@ class ListAccountsBalanceOperatorEnum(str, Enum):
 class ListAccountsRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    r"""Name of the ledger."""  
+
+    r"""Name of the ledger."""
     address: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'address', 'style': 'form', 'explode': True }})
-    r"""Filter accounts by address pattern (regular expression placed between ^ and $)."""  
+
+    r"""Filter accounts by address pattern (regular expression placed between ^ and $)."""
     after: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after', 'style': 'form', 'explode': True }})
-    r"""Pagination cursor, will return accounts after given address, in descending order."""  
+
+    r"""Pagination cursor, will return accounts after given address, in descending order."""
     balance: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balance', 'style': 'form', 'explode': True }})
-    r"""Filter accounts by their balance (default operator is gte)"""  
+
+    r"""Filter accounts by their balance (default operator is gte)"""
     balance_operator: Optional[ListAccountsBalanceOperatorEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balanceOperator', 'style': 'form', 'explode': True }})
-    r"""Operator used for the filtering of balances can be greater than/equal, less than/equal, greater than, less than, equal or not."""  
+
+    r"""Operator used for the filtering of balances can be greater than/equal, less than/equal, greater than, less than, equal or not."""
     balance_operator_deprecated: Optional[ListAccountsBalanceOperatorEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balance_operator', 'style': 'form', 'explode': True }})
+
     r"""Operator used for the filtering of balances can be greater than/equal, less than/equal, greater than, less than, equal or not.
     Deprecated, please use `balanceOperator` instead.
-    """  
+    """
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
+
     r"""Parameter used in pagination requests. Maximum page size is set to 15.
     Set to the value of next for the next page of results.
     Set to the value of previous for the previous page of results.
     No other parameters can be set when this parameter is set.
-    """  
+    """
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
-    r"""Filter accounts by metadata key value pairs. Nested objects can be used as seen in the example below."""  
+
+    r"""Filter accounts by metadata key value pairs. Nested objects can be used as seen in the example below."""
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
-    r"""The maximum number of results to return per page."""  
+
+    r"""The maximum number of results to return per page."""
     page_size_deprecated: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
+
     r"""The maximum number of results to return per page.
     Deprecated, please use `pageSize` instead.
-    """  
+    """
     pagination_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pagination_token', 'style': 'form', 'explode': True }})
+
     r"""Parameter used in pagination requests. Maximum page size is set to 15.
     Set to the value of next for the next page of results.
     Set to the value of previous for the previous page of results.
     No other parameters can be set when this parameter is set.
     Deprecated, please use `cursor` instead.
-    """  
+    """
     
 
 @dataclasses.dataclass
 class ListAccountsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     accounts_cursor_response: Optional[shared_accountscursorresponse.AccountsCursorResponse] = dataclasses.field(default=None)
-    r"""OK"""  
+
+    r"""OK"""
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    r"""Error"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Error"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

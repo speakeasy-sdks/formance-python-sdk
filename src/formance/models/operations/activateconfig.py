@@ -11,15 +11,20 @@ from typing import Optional
 class ActivateConfigRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Config ID"""  
+
+    r"""Config ID"""
     
 
 @dataclasses.dataclass
 class ActivateConfigResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     config_response: Optional[shared_configresponse.ConfigResponse] = dataclasses.field(default=None)
-    r"""Config successfully activated."""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Config successfully activated."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

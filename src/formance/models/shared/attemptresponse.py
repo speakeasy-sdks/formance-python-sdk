@@ -12,5 +12,6 @@ from formance import utils
 class AttemptResponse:
     r"""OK"""
     
-    data: shared_attempt.Attempt = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
+    data: shared_attempt.Attempt = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
+
     

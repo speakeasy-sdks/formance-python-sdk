@@ -11,15 +11,20 @@ from typing import Optional
 class GetPaymentRequest:
     
     payment_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'paymentId', 'style': 'simple', 'explode': False }})
-    r"""The payment ID."""  
+
+    r"""The payment ID."""
     
 
 @dataclasses.dataclass
 class GetPaymentResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     payment_response: Optional[shared_paymentresponse.PaymentResponse] = dataclasses.field(default=None)
-    r"""OK"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""OK"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

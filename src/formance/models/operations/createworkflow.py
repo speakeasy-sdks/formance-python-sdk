@@ -11,11 +11,16 @@ from typing import Optional
 @dataclasses.dataclass
 class CreateWorkflowResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     create_workflow_response: Optional[shared_createworkflowresponse.CreateWorkflowResponse] = dataclasses.field(default=None)
-    r"""Created workflow"""  
+
+    r"""Created workflow"""
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
-    r"""General error"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""General error"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

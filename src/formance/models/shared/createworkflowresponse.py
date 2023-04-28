@@ -12,5 +12,6 @@ from formance import utils
 class CreateWorkflowResponse:
     r"""Created workflow"""
     
-    data: shared_workflow.Workflow = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})  
+    data: shared_workflow.Workflow = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
+
     

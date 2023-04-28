@@ -10,5 +10,6 @@ from formance import utils
 @dataclasses.dataclass
 class CreateBalanceRequest:
     
-    name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})  
+    name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
+
     

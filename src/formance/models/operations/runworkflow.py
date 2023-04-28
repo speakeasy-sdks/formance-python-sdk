@@ -12,20 +12,28 @@ from typing import Optional
 class RunWorkflowRequest:
     
     flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
-    r"""The flow id"""  
-    request_body: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+
+    r"""The flow id"""
+    request_body: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+
     wait: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'wait', 'style': 'form', 'explode': True }})
-    r"""Wait end of the workflow before return"""  
+
+    r"""Wait end of the workflow before return"""
     
 
 @dataclasses.dataclass
 class RunWorkflowResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
-    r"""General error"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""General error"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     run_workflow_response: Optional[shared_runworkflowresponse.RunWorkflowResponse] = dataclasses.field(default=None)
-    r"""The workflow occurrence"""  
+
+    r"""The workflow occurrence"""
     

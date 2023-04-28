@@ -12,44 +12,59 @@ from typing import Any, Optional
 class CountTransactionsRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-    r"""Name of the ledger."""  
+
+    r"""Name of the ledger."""
     account: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'account', 'style': 'form', 'explode': True }})
-    r"""Filter transactions with postings involving given account, either as source or destination (regular expression placed between ^ and $)."""  
+
+    r"""Filter transactions with postings involving given account, either as source or destination (regular expression placed between ^ and $)."""
     destination: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'destination', 'style': 'form', 'explode': True }})
-    r"""Filter transactions with postings involving given account at destination (regular expression placed between ^ and $)."""  
+
+    r"""Filter transactions with postings involving given account at destination (regular expression placed between ^ and $)."""
     end_time: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'endTime', 'style': 'form', 'explode': True }})
+
     r"""Filter transactions that occurred before this timestamp.
     The format is RFC3339 and is exclusive (for example, \"2023-01-02T15:04:01Z\" excludes the first second of 4th minute).
-    """  
+    """
     end_time_deprecated: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'end_time', 'style': 'form', 'explode': True }})
+
     r"""Filter transactions that occurred before this timestamp.
     The format is RFC3339 and is exclusive (for example, \"2023-01-02T15:04:01Z\" excludes the first second of 4th minute).
     Deprecated, please use `endTime` instead.
-    """  
+    """
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
-    r"""Filter transactions by metadata key value pairs. Nested objects can be used as seen in the example below."""  
+
+    r"""Filter transactions by metadata key value pairs. Nested objects can be used as seen in the example below."""
     reference: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reference', 'style': 'form', 'explode': True }})
-    r"""Filter transactions by reference field."""  
+
+    r"""Filter transactions by reference field."""
     source: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'source', 'style': 'form', 'explode': True }})
-    r"""Filter transactions with postings involving given account at source (regular expression placed between ^ and $)."""  
+
+    r"""Filter transactions with postings involving given account at source (regular expression placed between ^ and $)."""
     start_time: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'startTime', 'style': 'form', 'explode': True }})
+
     r"""Filter transactions that occurred after this timestamp.
     The format is RFC3339 and is inclusive (for example, \"2023-01-02T15:04:01Z\" includes the first second of 4th minute).
-    """  
+    """
     start_time_deprecated: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'start_time', 'style': 'form', 'explode': True }})
+
     r"""Filter transactions that occurred after this timestamp.
     The format is RFC3339 and is inclusive (for example, \"2023-01-02T15:04:01Z\" includes the first second of 4th minute).
     Deprecated, please use `startTime` instead.
-    """  
+    """
     
 
 @dataclasses.dataclass
 class CountTransactionsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    r"""Error"""  
-    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Error"""
+    headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     
