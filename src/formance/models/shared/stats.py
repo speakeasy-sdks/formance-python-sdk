@@ -11,7 +11,5 @@ from formance import utils
 class Stats:
     
     accounts: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accounts') }})
-
     transactions: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions') }})
-
     

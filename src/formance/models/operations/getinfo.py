@@ -12,15 +12,10 @@ from typing import Optional
 class GetInfoResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     config_info_response: Optional[shared_configinforesponse.ConfigInfoResponse] = dataclasses.field(default=None)
-
     r"""OK"""
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-
     r"""Error"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

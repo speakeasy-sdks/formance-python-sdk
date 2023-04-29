@@ -14,7 +14,6 @@ from typing import Any, Optional
 class UpdateWalletRequestBody:
     
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
-
     r"""Custom metadata to attach to this wallet."""
     
 
@@ -22,21 +21,15 @@ class UpdateWalletRequestBody:
 class UpdateWalletRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     request_body: Optional[UpdateWalletRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     
 
 @dataclasses.dataclass
 class UpdateWalletResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     wallets_error_response: Optional[shared_walletserrorresponse.WalletsErrorResponse] = dataclasses.field(default=None)
-
     r"""Error"""
     

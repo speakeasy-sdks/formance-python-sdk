@@ -11,13 +11,10 @@ from typing import Any, Optional
 class AddMetadataOnTransactionRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-
     r"""Name of the ledger."""
     txid: int = dataclasses.field(metadata={'path_param': { 'field_name': 'txid', 'style': 'simple', 'explode': False }})
-
     r"""Transaction ID."""
     request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     r"""metadata"""
     
 
@@ -25,12 +22,8 @@ class AddMetadataOnTransactionRequest:
 class AddMetadataOnTransactionResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-
     r"""Error"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

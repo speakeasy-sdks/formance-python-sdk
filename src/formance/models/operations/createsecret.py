@@ -12,22 +12,16 @@ from typing import Optional
 class CreateSecretRequest:
     
     client_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'clientId', 'style': 'simple', 'explode': False }})
-
     r"""Client ID"""
     create_secret_request: Optional[shared_createsecretrequest.CreateSecretRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     
 
 @dataclasses.dataclass
 class CreateSecretResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     create_secret_response: Optional[shared_createsecretresponse.CreateSecretResponse] = dataclasses.field(default=None)
-
     r"""Created secret"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

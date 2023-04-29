@@ -12,12 +12,9 @@ from typing import Optional
 class RunScriptRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-
     r"""Name of the ledger."""
     script: shared_script.Script = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-
     preview: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'preview', 'style': 'form', 'explode': True }})
-
     r"""Set the preview mode. Preview mode doesn't add the logs to the database or publish a message to the message broker."""
     
 
@@ -25,13 +22,9 @@ class RunScriptRequest:
 class RunScriptResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     script_response: Optional[shared_scriptresponse.ScriptResponse] = dataclasses.field(default=None)
-
     r"""On success, it will return a 200 status code, and the resulting transaction under the `transaction` field.
     
     On failure, it will also return a 200 status code, and the following fields:

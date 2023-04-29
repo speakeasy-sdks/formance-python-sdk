@@ -12,8 +12,6 @@ from typing import Any, Optional
 class CreateWalletRequest:
     
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
-
     r"""Custom metadata to attach to this wallet."""
     

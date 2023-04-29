@@ -13,5 +13,4 @@ class ConfigResponse:
     r"""Config created successfully."""
     
     data: shared_webhooksconfig.WebhooksConfig = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
-
     

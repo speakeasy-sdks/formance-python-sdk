@@ -14,5 +14,4 @@ class MappingResponse:
     r"""OK"""
     
     data: Optional[shared_mapping.Mapping] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-
     

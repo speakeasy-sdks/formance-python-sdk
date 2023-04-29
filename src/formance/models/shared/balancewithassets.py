@@ -11,7 +11,5 @@ from formance import utils
 class BalanceWithAssets:
     
     assets: dict[str, float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assets') }})
-
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-
     

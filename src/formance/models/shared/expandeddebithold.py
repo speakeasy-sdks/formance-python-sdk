@@ -12,22 +12,15 @@ from typing import Any, Optional
 class ExpandedDebitHold:
     
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
-
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-
     r"""The unique ID of the hold."""
     metadata: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
-
     r"""Metadata associated with the hold."""
     original_amount: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('originalAmount') }})
-
     r"""Original amount on hold"""
     remaining: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remaining') }})
-
     r"""Remaining amount on hold"""
     wallet_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('walletID') }})
-
     r"""The ID of the wallet the hold is associated with."""
     destination: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination'), 'exclude': lambda f: f is None }})
-
     

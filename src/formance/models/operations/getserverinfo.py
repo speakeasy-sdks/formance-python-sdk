@@ -11,12 +11,8 @@ from typing import Optional
 class GetServerInfoResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     server_info: Optional[shared_serverinfo.ServerInfo] = dataclasses.field(default=None)
-
     r"""Server information"""
     

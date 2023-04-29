@@ -13,5 +13,4 @@ class ListWorkflowsResponse:
     r"""List of workflows"""
     
     data: list[shared_workflow.Workflow] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
-
     

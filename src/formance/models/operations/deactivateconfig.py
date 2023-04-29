@@ -11,7 +11,6 @@ from typing import Optional
 class DeactivateConfigRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""Config ID"""
     
 
@@ -19,12 +18,8 @@ class DeactivateConfigRequest:
 class DeactivateConfigResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     config_response: Optional[shared_configresponse.ConfigResponse] = dataclasses.field(default=None)
-
     r"""Config successfully deactivated."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

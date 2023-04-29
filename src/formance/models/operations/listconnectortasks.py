@@ -12,17 +12,14 @@ from typing import Optional
 class ListConnectorTasksRequest:
     
     connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
-
     r"""The name of the connector."""
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
-
     r"""Parameter used in pagination requests. Maximum page size is set to 15.
     Set to the value of next for the next page of results.
     Set to the value of previous for the previous page of results.
     No other parameters can be set when this parameter is set.
     """
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
-
     r"""The maximum number of results to return per page."""
     
 
@@ -30,12 +27,8 @@ class ListConnectorTasksRequest:
 class ListConnectorTasksResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     tasks_cursor: Optional[shared_taskscursor.TasksCursor] = dataclasses.field(default=None)
-
     r"""OK"""
     

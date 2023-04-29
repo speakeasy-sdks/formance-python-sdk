@@ -13,5 +13,4 @@ class PaymentResponse:
     r"""OK"""
     
     data: shared_payment.Payment = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
-
     

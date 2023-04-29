@@ -12,10 +12,8 @@ from typing import Optional
 class GetWorkflowOccurrenceRequest:
     
     flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flowId', 'style': 'simple', 'explode': False }})
-
     r"""The flow id"""
     run_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'runId', 'style': 'simple', 'explode': False }})
-
     r"""The occurrence id"""
     
 
@@ -23,15 +21,10 @@ class GetWorkflowOccurrenceRequest:
 class GetWorkflowOccurrenceResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
-
     r"""General error"""
     get_workflow_occurrence_response: Optional[shared_getworkflowoccurrenceresponse.GetWorkflowOccurrenceResponse] = dataclasses.field(default=None)
-
     r"""The workflow occurrence"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

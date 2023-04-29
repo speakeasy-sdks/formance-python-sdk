@@ -2,14 +2,14 @@ configVersion: 1.0.0
 management:
   docChecksum: e2d62c3257abdb44d60905723bd6484e
   docVersion: v1.0.0-rc.5
-  speakeasyVersion: 1.26.2
-  generationVersion: 2.23.2
+  speakeasyVersion: 1.26.4
+  generationVersion: 2.23.4
 generation:
   telemetryEnabled: false
   sdkClassName: formance
   singleTagPerOp: false
 python:
-  version: 0.11.0
+  version: 0.11.1
   author: formance
   description: Python Client SDK for Formance API
   packageName: formance-python-sdk

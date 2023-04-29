@@ -12,5 +12,4 @@ from formance import utils
 class Transactions:
     
     transactions: list[shared_transactiondata.TransactionData] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions') }})
-
     

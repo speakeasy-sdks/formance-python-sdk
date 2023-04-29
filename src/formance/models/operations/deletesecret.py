@@ -10,10 +10,8 @@ from typing import Optional
 class DeleteSecretRequest:
     
     client_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'clientId', 'style': 'simple', 'explode': False }})
-
     r"""Client ID"""
     secret_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'secretId', 'style': 'simple', 'explode': False }})
-
     r"""Secret ID"""
     
 
@@ -21,9 +19,6 @@ class DeleteSecretRequest:
 class DeleteSecretResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

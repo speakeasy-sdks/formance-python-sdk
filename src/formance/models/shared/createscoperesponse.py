@@ -14,5 +14,4 @@ class CreateScopeResponse:
     r"""Created scope"""
     
     data: Optional[shared_scope.Scope] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-
     

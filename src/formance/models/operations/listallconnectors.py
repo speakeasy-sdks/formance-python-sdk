@@ -11,12 +11,8 @@ from typing import Optional
 class ListAllConnectorsResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     connectors_response: Optional[shared_connectorsresponse.ConnectorsResponse] = dataclasses.field(default=None)
-
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

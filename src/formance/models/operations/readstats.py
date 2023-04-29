@@ -12,7 +12,6 @@ from typing import Optional
 class ReadStatsRequest:
     
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
-
     r"""name of the ledger"""
     
 
@@ -20,15 +19,10 @@ class ReadStatsRequest:
 class ReadStatsResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-
     r"""Error"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     stats_response: Optional[shared_statsresponse.StatsResponse] = dataclasses.field(default=None)
-
     r"""OK"""
     

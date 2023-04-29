@@ -13,5 +13,4 @@ class CreateWalletResponse:
     r"""Wallet created"""
     
     data: shared_wallet.Wallet = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
-
     

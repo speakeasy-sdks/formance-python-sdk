@@ -10,12 +10,8 @@ from typing import Any, Optional
 class ConnectorsStripeTransferResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     stripe_transfer_response: Optional[dict[str, Any]] = dataclasses.field(default=None)
-
     r"""OK"""
     

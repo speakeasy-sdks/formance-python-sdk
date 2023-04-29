@@ -14,5 +14,4 @@ class ListClientsResponse:
     r"""List of clients"""
     
     data: Optional[list[shared_client.Client]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-
     

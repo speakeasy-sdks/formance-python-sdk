@@ -11,7 +11,6 @@ from typing import Optional
 class UninstallConnectorRequest:
     
     connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
-
     r"""The name of the connector."""
     
 
@@ -19,9 +18,6 @@ class UninstallConnectorRequest:
 class UninstallConnectorResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

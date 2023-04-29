@@ -12,24 +12,17 @@ from typing import Optional
 class GetBalanceRequest:
     
     balance_name: str = dataclasses.field(metadata={'path_param': { 'field_name': 'balanceName', 'style': 'simple', 'explode': False }})
-
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     
 
 @dataclasses.dataclass
 class GetBalanceResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     get_balance_response: Optional[shared_getbalanceresponse.GetBalanceResponse] = dataclasses.field(default=None)
-
     r"""Balance summary"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     wallets_error_response: Optional[shared_walletserrorresponse.WalletsErrorResponse] = dataclasses.field(default=None)
-
     r"""Error"""
     

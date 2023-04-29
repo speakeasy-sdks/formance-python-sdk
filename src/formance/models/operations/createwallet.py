@@ -12,15 +12,10 @@ from typing import Optional
 class CreateWalletResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     create_wallet_response: Optional[shared_createwalletresponse.CreateWalletResponse] = dataclasses.field(default=None)
-
     r"""Wallet created"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     wallets_error_response: Optional[shared_walletserrorresponse.WalletsErrorResponse] = dataclasses.field(default=None)
-
     r"""Error"""
     

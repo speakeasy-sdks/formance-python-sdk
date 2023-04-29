@@ -13,5 +13,4 @@ class GetHoldResponse:
     r"""Holds"""
     
     data: shared_expandeddebithold.ExpandedDebitHold = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
-
     

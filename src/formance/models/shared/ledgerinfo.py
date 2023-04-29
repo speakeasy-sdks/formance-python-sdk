@@ -13,7 +13,6 @@ from typing import Optional
 class LedgerInfoStorage:
     
     migrations: Optional[list[shared_migrationinfo.MigrationInfo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('migrations'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -21,7 +20,5 @@ class LedgerInfoStorage:
 class LedgerInfo:
     
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-
     storage: Optional[LedgerInfoStorage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storage'), 'exclude': lambda f: f is None }})
-
     

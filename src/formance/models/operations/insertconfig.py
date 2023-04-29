@@ -11,15 +11,10 @@ from typing import Optional
 class InsertConfigResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     config_response: Optional[shared_configresponse.ConfigResponse] = dataclasses.field(default=None)
-
     r"""Config created successfully."""
     insert_config_400_text_plain_string: Optional[str] = dataclasses.field(default=None)
-
     r"""Bad Request"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
