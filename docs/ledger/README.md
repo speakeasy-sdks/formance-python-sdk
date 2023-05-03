@@ -26,7 +26,7 @@ s = formance.Formance(
 
 
 req = operations.GetLedgerInfoRequest(
-    ledger="ledger001",
+    ledger='ledger001',
 )
 
 res = s.ledger.get_ledger_info(req)

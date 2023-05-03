@@ -29,27 +29,27 @@ s = formance.Formance(
 req = operations.RunScriptRequest(
     script=shared.Script(
         metadata={
-            "explicabo": "deserunt",
-            "distinctio": "quibusdam",
-            "labore": "modi",
-            "qui": "aliquid",
+            "explicabo": 'deserunt',
+            "distinctio": 'quibusdam',
+            "labore": 'modi',
+            "qui": 'aliquid',
         },
-        plain="vars {
+        plain='vars {
     account $user
     }
     send [COIN 10] (
     	source = @world
     	destination = $user
     )
-    ",
-        reference="order_1234",
+    ',
+        reference='order_1234',
         vars={
-            "quos": "perferendis",
-            "magni": "assumenda",
-            "ipsam": "alias",
+            "quos": 'perferendis',
+            "magni": 'assumenda',
+            "ipsam": 'alias',
         },
     ),
-    ledger="ledger001",
+    ledger='ledger001',
     preview=True,
 )
 

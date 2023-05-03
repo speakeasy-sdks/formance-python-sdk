@@ -34,8 +34,8 @@ s = formance.Formance(
 
 
 req = operations.AddScopeToClientRequest(
-    client_id="temporibus",
-    scope_id="ab",
+    client_id='temporibus',
+    scope_id='ab',
 )
 
 res = s.clients.add_scope_to_client(req)
@@ -62,23 +62,23 @@ s = formance.Formance(
 
 
 req = shared.CreateClientRequest(
-    description="quis",
+    description='quis',
     metadata={
-        "deserunt": "perferendis",
+        "deserunt": 'perferendis',
     },
-    name="Estelle Will",
+    name='Estelle Will',
     post_logout_redirect_uris=[
-        "at",
-        "maiores",
-        "molestiae",
-        "quod",
+        'at',
+        'maiores',
+        'molestiae',
+        'quod',
     ],
     public=False,
     redirect_uris=[
-        "esse",
-        "totam",
-        "porro",
-        "dolorum",
+        'esse',
+        'totam',
+        'porro',
+        'dolorum',
     ],
     trusted=False,
 )
@@ -109,11 +109,11 @@ s = formance.Formance(
 req = operations.CreateSecretRequest(
     create_secret_request=shared.CreateSecretRequest(
         metadata={
-            "nam": "officia",
+            "nam": 'officia',
         },
-        name="Wayne Lind",
+        name='Wayne Lind',
     ),
-    client_id="totam",
+    client_id='totam',
 )
 
 res = s.clients.create_secret(req)
@@ -140,7 +140,7 @@ s = formance.Formance(
 
 
 req = operations.DeleteClientRequest(
-    client_id="beatae",
+    client_id='beatae',
 )
 
 res = s.clients.delete_client(req)
@@ -167,8 +167,8 @@ s = formance.Formance(
 
 
 req = operations.DeleteScopeFromClientRequest(
-    client_id="commodi",
-    scope_id="molestiae",
+    client_id='commodi',
+    scope_id='molestiae',
 )
 
 res = s.clients.delete_scope_from_client(req)
@@ -195,8 +195,8 @@ s = formance.Formance(
 
 
 req = operations.DeleteSecretRequest(
-    client_id="modi",
-    secret_id="qui",
+    client_id='modi',
+    secret_id='qui',
 )
 
 res = s.clients.delete_secret(req)
@@ -246,7 +246,7 @@ s = formance.Formance(
 
 
 req = operations.ReadClientRequest(
-    client_id="impedit",
+    client_id='impedit',
 )
 
 res = s.clients.read_client(req)
@@ -274,26 +274,26 @@ s = formance.Formance(
 
 req = operations.UpdateClientRequest(
     update_client_request=shared.UpdateClientRequest(
-        description="cum",
+        description='cum',
         metadata={
-            "ipsum": "excepturi",
-            "aspernatur": "perferendis",
+            "ipsum": 'excepturi',
+            "aspernatur": 'perferendis',
         },
-        name="Faye Cormier",
+        name='Faye Cormier',
         post_logout_redirect_uris=[
-            "laboriosam",
-            "hic",
-            "saepe",
+            'laboriosam',
+            'hic',
+            'saepe',
         ],
         public=False,
         redirect_uris=[
-            "in",
-            "corporis",
-            "iste",
+            'in',
+            'corporis',
+            'iste',
         ],
         trusted=False,
     ),
-    client_id="iure",
+    client_id='iure',
 )
 
 res = s.clients.update_client(req)

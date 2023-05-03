@@ -27,7 +27,7 @@ s = formance.Formance(
 
 
 req = operations.GetMappingRequest(
-    ledger="ledger001",
+    ledger='ledger001',
 )
 
 res = s.mapping.get_mapping(req)
@@ -57,22 +57,22 @@ req = operations.UpdateMappingRequest(
     mapping=shared.Mapping(
         contracts=[
             shared.Contract(
-                account="users:001",
+                account='users:001',
                 expr={
-                    "nobis": "enim",
+                    "nobis": 'enim',
                 },
             ),
             shared.Contract(
-                account="users:001",
+                account='users:001',
                 expr={
-                    "nemo": "minima",
-                    "excepturi": "accusantium",
-                    "iure": "culpa",
+                    "nemo": 'minima',
+                    "excepturi": 'accusantium',
+                    "iure": 'culpa',
                 },
             ),
         ],
     ),
-    ledger="ledger001",
+    ledger='ledger001',
 )
 
 res = s.mapping.update_mapping(req)

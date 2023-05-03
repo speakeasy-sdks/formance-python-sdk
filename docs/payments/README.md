@@ -38,12 +38,12 @@ s = formance.Formance(
 
 req = shared.StripeTransferRequest(
     amount=100,
-    asset="USD",
-    destination="acct_1Gqj58KZcSIg2N2q",
+    asset='USD',
+    destination='acct_1Gqj58KZcSIg2N2q',
     metadata={
-        "quasi": "reiciendis",
-        "voluptatibus": "vero",
-        "nihil": "praesentium",
+        "quasi": 'reiciendis',
+        "voluptatibus": 'vero',
+        "nihil": 'praesentium',
     },
 )
 
@@ -71,8 +71,8 @@ s = formance.Formance(
 
 
 req = operations.GetConnectorTaskRequest(
-    connector="BANKING-CIRCLE",
-    task_id="ipsa",
+    connector=shared.ConnectorEnum.BANKING_CIRCLE,
+    task_id='ipsa',
 )
 
 res = s.payments.get_connector_task(req)
@@ -99,7 +99,7 @@ s = formance.Formance(
 
 
 req = operations.GetPaymentRequest(
-    payment_id="omnis",
+    payment_id='omnis',
 )
 
 res = s.payments.get_payment(req)
@@ -127,9 +127,9 @@ s = formance.Formance(
 
 req = operations.InstallConnectorRequest(
     request_body=shared.WiseConfig(
-        api_key="XXX",
+        api_key='XXX',
     ),
-    connector="CURRENCY-CLOUD",
+    connector=shared.ConnectorEnum.CURRENCY_CLOUD,
 )
 
 res = s.payments.install_connector(req)
@@ -202,8 +202,8 @@ s = formance.Formance(
 
 
 req = operations.ListConnectorTasksRequest(
-    connector="STRIPE",
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    connector=shared.ConnectorEnum.STRIPE,
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     page_size=39187,
 )
 
@@ -231,11 +231,11 @@ s = formance.Formance(
 
 
 req = operations.ListPaymentsRequest(
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     page_size=441711,
     sort=[
-        "maiores",
-        "dicta",
+        'maiores',
+        'dicta',
     ],
 )
 
@@ -263,11 +263,11 @@ s = formance.Formance(
 
 
 req = operations.PaymentslistAccountsRequest(
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     page_size=359444,
     sort=[
-        "iusto",
-        "dicta",
+        'iusto',
+        'dicta',
     ],
 )
 
@@ -295,7 +295,7 @@ s = formance.Formance(
 
 
 req = operations.ReadConnectorConfigRequest(
-    connector="CURRENCY-CLOUD",
+    connector=shared.ConnectorEnum.CURRENCY_CLOUD,
 )
 
 res = s.payments.read_connector_config(req)
@@ -324,7 +324,7 @@ s = formance.Formance(
 
 
 req = operations.ResetConnectorRequest(
-    connector="DUMMY-PAY",
+    connector=shared.ConnectorEnum.DUMMY_PAY,
 )
 
 res = s.payments.reset_connector(req)
@@ -351,7 +351,7 @@ s = formance.Formance(
 
 
 req = operations.UninstallConnectorRequest(
-    connector="BANKING-CIRCLE",
+    connector=shared.ConnectorEnum.BANKING_CIRCLE,
 )
 
 res = s.payments.uninstall_connector(req)

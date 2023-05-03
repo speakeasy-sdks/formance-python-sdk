@@ -30,12 +30,12 @@ s = formance.Formance(
 
 req = operations.AddMetadataToAccountRequest(
     request_body={
-        "provident": "distinctio",
-        "quibusdam": "unde",
-        "nulla": "corrupti",
+        "provident": 'distinctio',
+        "quibusdam": 'unde',
+        "nulla": 'corrupti',
     },
-    address="users:001",
-    ledger="ledger001",
+    address='users:001',
+    ledger='ledger001',
 )
 
 res = s.accounts.add_metadata_to_account(req)
@@ -62,13 +62,13 @@ s = formance.Formance(
 
 
 req = operations.CountAccountsRequest(
-    address="users:.+",
-    ledger="ledger001",
+    address='users:.+',
+    ledger='ledger001',
     metadata={
-        "vel": "error",
-        "deserunt": "suscipit",
-        "iure": "magnam",
-        "debitis": "ipsa",
+        "vel": 'error',
+        "deserunt": 'suscipit',
+        "iure": 'magnam',
+        "debitis": 'ipsa',
     },
 )
 
@@ -96,8 +96,8 @@ s = formance.Formance(
 
 
 req = operations.GetAccountRequest(
-    address="users:001",
-    ledger="ledger001",
+    address='users:001',
+    ledger='ledger001',
 )
 
 res = s.accounts.get_account(req)
@@ -124,22 +124,22 @@ s = formance.Formance(
 
 
 req = operations.ListAccountsRequest(
-    address="users:.+",
-    after="users:003",
+    address='users:.+',
+    after='users:003',
     balance=2400,
-    balance_operator="gte",
-    balance_operator_deprecated="gte",
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
-    ledger="ledger001",
+    balance_operator=operations.ListAccountsBalanceOperatorEnum.GTE,
+    balance_operator_deprecated=operations.ListAccountsBalanceOperatorEnum.GTE,
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
+    ledger='ledger001',
     metadata={
-        "tempora": "suscipit",
-        "molestiae": "minus",
-        "placeat": "voluptatum",
-        "iusto": "excepturi",
+        "tempora": 'suscipit',
+        "molestiae": 'minus',
+        "placeat": 'voluptatum',
+        "iusto": 'excepturi',
     },
     page_size=392785,
     page_size_deprecated=925597,
-    pagination_token="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    pagination_token='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
 )
 
 res = s.accounts.list_accounts(req)

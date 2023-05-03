@@ -27,7 +27,7 @@ s = formance.Formance(
 
 
 req = operations.ReadStatsRequest(
-    ledger="ledger001",
+    ledger='ledger001',
 )
 
 res = s.stats.read_stats(req)

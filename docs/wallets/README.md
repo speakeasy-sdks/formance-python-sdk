@@ -44,7 +44,7 @@ req = operations.ConfirmHoldRequest(
         amount=100,
         final=True,
     ),
-    hold_id="iure",
+    hold_id='iure',
 )
 
 res = s.wallets.confirm_hold(req)
@@ -72,9 +72,9 @@ s = formance.Formance(
 
 req = operations.CreateBalanceRequest(
     create_balance_request=shared.CreateBalanceRequest(
-        name="Doyle Gibson",
+        name='Doyle Gibson',
     ),
-    id="b711e5b7-fd2e-4d02-8921-cddc692601fb",
+    id='b711e5b7-fd2e-4d02-8921-cddc692601fb',
 )
 
 res = s.wallets.create_balance(req)
@@ -102,10 +102,10 @@ s = formance.Formance(
 
 req = shared.CreateWalletRequest(
     metadata={
-        "voluptate": "autem",
-        "nam": "eaque",
+        "voluptate": 'autem',
+        "nam": 'eaque',
     },
-    name="Dr. Herman Wolf",
+    name='Dr. Herman Wolf',
 )
 
 res = s.wallets.create_wallet(req)
@@ -135,24 +135,24 @@ req = operations.CreditWalletRequest(
     credit_wallet_request=shared.CreditWalletRequest(
         amount=shared.Monetary(
             amount=11714,
-            asset="cumque",
+            asset='cumque',
         ),
-        balance="corporis",
+        balance='corporis',
         metadata={
-            "libero": "nobis",
-            "dolores": "quis",
-            "totam": "dignissimos",
-            "eaque": "quis",
+            "libero": 'nobis',
+            "dolores": 'quis',
+            "totam": 'dignissimos',
+            "eaque": 'quis',
         },
-        reference="nesciunt",
+        reference='nesciunt',
         sources=[
             shared.LedgerAccountSubject(
-                identifier="dolores",
-                type="minus",
+                identifier='dolores',
+                type='minus',
             ),
         ],
     ),
-    id="73d5fe9b-90c2-4890-9b3f-e49a8d9cbf48",
+    id='73d5fe9b-90c2-4890-9b3f-e49a8d9cbf48',
 )
 
 res = s.wallets.credit_wallet(req)
@@ -182,24 +182,24 @@ req = operations.DebitWalletRequest(
     debit_wallet_request=shared.DebitWalletRequest(
         amount=shared.Monetary(
             amount=398221,
-            asset="dolorem",
+            asset='dolorem',
         ),
         balances=[
-            "dolor",
+            'dolor',
         ],
-        description="qui",
+        description='qui',
         destination=shared.LedgerAccountSubject(
-            identifier="hic",
-            type="excepturi",
+            identifier='hic',
+            type='excepturi',
         ),
         metadata={
-            "voluptate": "dignissimos",
-            "reiciendis": "amet",
-            "dolorum": "numquam",
+            "voluptate": 'dignissimos',
+            "reiciendis": 'amet',
+            "dolorum": 'numquam',
         },
         pending=False,
     ),
-    id="100674eb-f692-480d-9ba7-7a89ebf737ae",
+    id='100674eb-f692-480d-9ba7-7a89ebf737ae',
 )
 
 res = s.wallets.debit_wallet(req)
@@ -226,8 +226,8 @@ s = formance.Formance(
 
 
 req = operations.GetBalanceRequest(
-    balance_name="eius",
-    id="203ce5e6-a95d-48a0-9446-ce2af7a73cf3",
+    balance_name='eius',
+    id='203ce5e6-a95d-48a0-9446-ce2af7a73cf3',
 )
 
 res = s.wallets.get_balance(req)
@@ -254,7 +254,7 @@ s = formance.Formance(
 
 
 req = operations.GetHoldRequest(
-    hold_id="tempore",
+    hold_id='tempore',
 )
 
 res = s.wallets.get_hold(req)
@@ -281,15 +281,15 @@ s = formance.Formance(
 
 
 req = operations.GetHoldsRequest(
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     metadata={
-        "numquam": "enim",
-        "dolorem": "sapiente",
-        "totam": "nihil",
-        "sit": "expedita",
+        "numquam": 'enim',
+        "dolorem": 'sapiente',
+        "totam": 'nihil',
+        "sit": 'expedita',
     },
     page_size=207470,
-    wallet_id="sed",
+    wallet_id='sed',
 )
 
 res = s.wallets.get_holds(req)
@@ -314,9 +314,9 @@ s = formance.Formance(
 
 
 req = operations.GetTransactionsRequest(
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     page_size=424685,
-    wallet_id="libero",
+    wallet_id='libero',
 )
 
 res = s.wallets.get_transactions(req)
@@ -343,7 +343,7 @@ s = formance.Formance(
 
 
 req = operations.GetWalletRequest(
-    id="5a73429c-db1a-4842-abb6-79d2322715bf",
+    id='5a73429c-db1a-4842-abb6-79d2322715bf',
 )
 
 res = s.wallets.get_wallet(req)
@@ -370,7 +370,7 @@ s = formance.Formance(
 
 
 req = operations.ListBalancesRequest(
-    id="0cbb1e31-b8b9-40f3-843a-1108e0adcf4b",
+    id='0cbb1e31-b8b9-40f3-843a-1108e0adcf4b',
 )
 
 res = s.wallets.list_balances(req)
@@ -397,13 +397,13 @@ s = formance.Formance(
 
 
 req = operations.ListWalletsRequest(
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     metadata={
-        "qui": "quae",
-        "laudantium": "odio",
-        "occaecati": "voluptatibus",
+        "qui": 'quae',
+        "laudantium": 'odio',
+        "occaecati": 'voluptatibus',
     },
-    name="Ignacio Moen",
+    name='Ignacio Moen',
     page_size=961571,
 )
 
@@ -433,11 +433,11 @@ s = formance.Formance(
 req = operations.UpdateWalletRequest(
     request_body=operations.UpdateWalletRequestBody(
         metadata={
-            "consectetur": "vero",
-            "tenetur": "dignissimos",
+            "consectetur": 'vero',
+            "tenetur": 'dignissimos',
         },
     ),
-    id="fbc7abd7-4dd3-49c0-b5d2-cff7c70a4562",
+    id='fbc7abd7-4dd3-49c0-b5d2-cff7c70a4562',
 )
 
 res = s.wallets.update_wallet(req)
@@ -464,7 +464,7 @@ s = formance.Formance(
 
 
 req = operations.VoidHoldRequest(
-    hold_id="vel",
+    hold_id='vel',
 )
 
 res = s.wallets.void_hold(req)

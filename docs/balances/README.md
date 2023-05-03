@@ -27,11 +27,11 @@ s = formance.Formance(
 
 
 req = operations.GetBalancesRequest(
-    address="users:001",
-    after="users:003",
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
-    ledger="ledger001",
-    pagination_token="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    address='users:001',
+    after='users:003',
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
+    ledger='ledger001',
+    pagination_token='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
 )
 
 res = s.balances.get_balances(req)
@@ -58,8 +58,8 @@ s = formance.Formance(
 
 
 req = operations.GetBalancesAggregatedRequest(
-    address="users:001",
-    ledger="ledger001",
+    address='users:001',
+    ledger='ledger001',
 )
 
 res = s.balances.get_balances_aggregated(req)

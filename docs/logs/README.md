@@ -27,14 +27,14 @@ s = formance.Formance(
 
 
 req = operations.ListLogsRequest(
-    after="1234",
-    cursor="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    after='1234',
+    cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     end_time=dateutil.parser.isoparse('2020-11-28T02:15:07.561Z'),
     end_time_deprecated=dateutil.parser.isoparse('2022-12-10T00:25:28.749Z'),
-    ledger="ledger001",
+    ledger='ledger001',
     page_size=969810,
     page_size_deprecated=666767,
-    pagination_token="aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==",
+    pagination_token='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     start_time=dateutil.parser.isoparse('2021-08-29T10:25:27.700Z'),
     start_time_deprecated=dateutil.parser.isoparse('2022-10-16T05:02:54.746Z'),
 )

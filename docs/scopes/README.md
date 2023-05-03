@@ -32,8 +32,8 @@ s = formance.Formance(
 
 
 req = operations.AddTransientScopeRequest(
-    scope_id="commodi",
-    transient_scope_id="repudiandae",
+    scope_id='commodi',
+    transient_scope_id='repudiandae',
 )
 
 res = s.scopes.add_transient_scope(req)
@@ -60,9 +60,9 @@ s = formance.Formance(
 
 
 req = shared.CreateScopeRequest(
-    label="quae",
+    label='quae',
     metadata={
-        "quidem": "molestias",
+        "quidem": 'molestias',
     },
 )
 
@@ -90,7 +90,7 @@ s = formance.Formance(
 
 
 req = operations.DeleteScopeRequest(
-    scope_id="excepturi",
+    scope_id='excepturi',
 )
 
 res = s.scopes.delete_scope(req)
@@ -117,8 +117,8 @@ s = formance.Formance(
 
 
 req = operations.DeleteTransientScopeRequest(
-    scope_id="pariatur",
-    transient_scope_id="modi",
+    scope_id='pariatur',
+    transient_scope_id='modi',
 )
 
 res = s.scopes.delete_transient_scope(req)
@@ -168,7 +168,7 @@ s = formance.Formance(
 
 
 req = operations.ReadScopeRequest(
-    scope_id="praesentium",
+    scope_id='praesentium',
 )
 
 res = s.scopes.read_scope(req)
@@ -196,15 +196,15 @@ s = formance.Formance(
 
 req = operations.UpdateScopeRequest(
     update_scope_request=shared.UpdateScopeRequest(
-        label="rem",
+        label='rem',
         metadata={
-            "quasi": "repudiandae",
-            "sint": "veritatis",
-            "itaque": "incidunt",
-            "enim": "consequatur",
+            "quasi": 'repudiandae',
+            "sint": 'veritatis',
+            "itaque": 'incidunt',
+            "enim": 'consequatur',
         },
     ),
-    scope_id="est",
+    scope_id='est',
 )
 
 res = s.scopes.update_scope(req)

@@ -34,22 +34,22 @@ s = formance.Formance(
 req = shared.CreateWorkflowRequest(
     stages=[
         {
-            "architecto": "mollitia",
-            "dolorem": "culpa",
-            "consequuntur": "repellat",
-            "mollitia": "occaecati",
+            "architecto": 'mollitia',
+            "dolorem": 'culpa',
+            "consequuntur": 'repellat',
+            "mollitia": 'occaecati',
         },
         {
-            "commodi": "quam",
-            "molestiae": "velit",
+            "commodi": 'quam',
+            "molestiae": 'velit',
         },
         {
-            "quia": "quis",
-            "vitae": "laborum",
-            "animi": "enim",
+            "quia": 'quis',
+            "vitae": 'laborum',
+            "animi": 'enim',
         },
         {
-            "quo": "sequi",
+            "quo": 'sequi',
         },
     ],
 )
@@ -78,7 +78,7 @@ s = formance.Formance(
 
 
 req = operations.GetFlowRequest(
-    flow_id="tenetur",
+    flow_id='tenetur',
 )
 
 res = s.orchestration.get_flow(req)
@@ -105,8 +105,8 @@ s = formance.Formance(
 
 
 req = operations.GetWorkflowOccurrenceRequest(
-    flow_id="ipsam",
-    run_id="id",
+    flow_id='ipsam',
+    run_id='id',
 )
 
 res = s.orchestration.get_workflow_occurrence(req)
@@ -156,7 +156,7 @@ s = formance.Formance(
 
 
 req = operations.ListRunsRequest(
-    flow_id="possimus",
+    flow_id='possimus',
 )
 
 res = s.orchestration.list_runs(req)
@@ -207,9 +207,9 @@ s = formance.Formance(
 
 req = operations.RunWorkflowRequest(
     request_body={
-        "quasi": "error",
+        "quasi": 'error',
     },
-    flow_id="temporibus",
+    flow_id='temporibus',
     wait=False,
 )
 

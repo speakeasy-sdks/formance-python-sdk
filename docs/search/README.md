@@ -27,22 +27,22 @@ s = formance.Formance(
 
 req = shared.Query(
     after=[
-        "users:002",
+        'users:002',
     ],
-    cursor="YXVsdCBhbmQgYSBtYXhpbXVtIG1heF9yZXN1bHRzLol=",
+    cursor='YXVsdCBhbmQgYSBtYXhpbXVtIG1heF9yZXN1bHRzLol=',
     ledgers=[
-        "quickstart",
-        "quickstart",
-        "quickstart",
+        'quickstart',
+        'quickstart',
+        'quickstart',
     ],
     page_size=569618,
-    policy="OR",
-    sort="txid:asc",
-    target="tempora",
+    policy='OR',
+    sort='txid:asc',
+    target='tempora',
     terms=[
-        "destination=central_bank1",
-        "destination=central_bank1",
-        "destination=central_bank1",
+        'destination=central_bank1',
+        'destination=central_bank1',
+        'destination=central_bank1',
     ],
 )
 

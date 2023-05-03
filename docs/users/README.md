@@ -50,7 +50,7 @@ s = formance.Formance(
 
 
 req = operations.ReadUserRequest(
-    user_id="quasi",
+    user_id='quasi',
 )
 
 res = s.users.read_user(req)

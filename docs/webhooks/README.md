@@ -32,7 +32,7 @@ s = formance.Formance(
 
 
 req = operations.ActivateConfigRequest(
-    id="4997257d-dfb6-445b-929c-cbe2ab182818",
+    id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
 
 res = s.webhooks.activate_config(req)
@@ -64,9 +64,9 @@ s = formance.Formance(
 
 req = operations.ChangeConfigSecretRequest(
     config_change_secret=shared.ConfigChangeSecret(
-        secret="V0bivxRWveaoz08afqjU6Ko/jwO0Cb+3",
+        secret='V0bivxRWveaoz08afqjU6Ko/jwO0Cb+3',
     ),
-    id="4997257d-dfb6-445b-929c-cbe2ab182818",
+    id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
 
 res = s.webhooks.change_config_secret(req)
@@ -93,7 +93,7 @@ s = formance.Formance(
 
 
 req = operations.DeactivateConfigRequest(
-    id="4997257d-dfb6-445b-929c-cbe2ab182818",
+    id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
 
 res = s.webhooks.deactivate_config(req)
@@ -120,7 +120,7 @@ s = formance.Formance(
 
 
 req = operations.DeleteConfigRequest(
-    id="4997257d-dfb6-445b-929c-cbe2ab182818",
+    id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
 
 res = s.webhooks.delete_config(req)
@@ -147,8 +147,8 @@ s = formance.Formance(
 
 
 req = operations.GetManyConfigsRequest(
-    endpoint="https://example.com",
-    id="4997257d-dfb6-445b-929c-cbe2ab182818",
+    endpoint='https://example.com',
+    id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
 
 res = s.webhooks.get_many_configs(req)
@@ -184,14 +184,14 @@ s = formance.Formance(
 
 
 req = shared.ConfigUser(
-    endpoint="https://example.com",
+    endpoint='https://example.com',
     event_types=[
-        "TYPE1",
-        "TYPE1",
-        "TYPE1",
-        "TYPE1",
+        'TYPE1',
+        'TYPE1',
+        'TYPE1',
+        'TYPE1',
     ],
-    secret="V0bivxRWveaoz08afqjU6Ko/jwO0Cb+3",
+    secret='V0bivxRWveaoz08afqjU6Ko/jwO0Cb+3',
 )
 
 res = s.webhooks.insert_config(req)
@@ -218,7 +218,7 @@ s = formance.Formance(
 
 
 req = operations.TestConfigRequest(
-    id="4997257d-dfb6-445b-929c-cbe2ab182818",
+    id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
 
 res = s.webhooks.test_config(req)
