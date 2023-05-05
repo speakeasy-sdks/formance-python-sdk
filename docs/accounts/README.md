@@ -27,7 +27,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.AddMetadataToAccountRequest(
     request_body={
         "provident": 'distinctio',
@@ -59,7 +58,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.CountAccountsRequest(
     address='users:.+',
@@ -94,7 +92,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetAccountRequest(
     address='users:001',
     ledger='ledger001',
@@ -121,7 +118,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.ListAccountsRequest(
     address='users:.+',

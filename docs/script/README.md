@@ -25,7 +25,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.RunScriptRequest(
     script=shared.Script(
         metadata={

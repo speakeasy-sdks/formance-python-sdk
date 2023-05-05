@@ -30,7 +30,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ActivateConfigRequest(
     id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
@@ -61,7 +60,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ChangeConfigSecretRequest(
     config_change_secret=shared.ConfigChangeSecret(
         secret='V0bivxRWveaoz08afqjU6Ko/jwO0Cb+3',
@@ -91,7 +89,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.DeactivateConfigRequest(
     id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
@@ -118,7 +115,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.DeleteConfigRequest(
     id='4997257d-dfb6-445b-929c-cbe2ab182818',
 )
@@ -144,7 +140,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetManyConfigsRequest(
     endpoint='https://example.com',
@@ -182,7 +177,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = shared.ConfigUser(
     endpoint='https://example.com',
     event_types=[
@@ -215,7 +209,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.TestConfigRequest(
     id='4997257d-dfb6-445b-929c-cbe2ab182818',

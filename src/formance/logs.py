@@ -22,6 +22,7 @@ class Logs:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def list_logs(self, request: operations.ListLogsRequest) -> operations.ListLogsResponse:
         r"""List the logs from a ledger
         List the logs from a ledger, sorted by ID in descending order.

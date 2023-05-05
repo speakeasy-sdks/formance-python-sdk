@@ -25,7 +25,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetBalancesRequest(
     address='users:001',
     after='users:003',
@@ -55,7 +54,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetBalancesAggregatedRequest(
     address='users:001',

@@ -22,6 +22,7 @@ class Balances:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_balances(self, request: operations.GetBalancesRequest) -> operations.GetBalancesResponse:
         r"""Get the balances from a ledger's account"""
         base_url = self._server_url
@@ -48,6 +49,7 @@ class Balances:
 
         return res
 
+    
     def get_balances_aggregated(self, request: operations.GetBalancesAggregatedRequest) -> operations.GetBalancesAggregatedResponse:
         r"""Get the aggregated balances from selected accounts"""
         base_url = self._server_url

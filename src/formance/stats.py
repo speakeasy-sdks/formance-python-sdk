@@ -22,6 +22,7 @@ class Stats:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def read_stats(self, request: operations.ReadStatsRequest) -> operations.ReadStatsResponse:
         r"""Get statistics from a ledger
         Get statistics from a ledger. (aggregate metrics on accounts and transactions)

@@ -25,7 +25,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ListLogsRequest(
     after='1234',
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',

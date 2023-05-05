@@ -22,6 +22,7 @@ class Users:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def list_users(self) -> operations.ListUsersResponse:
         r"""List users
         List users
@@ -45,6 +46,7 @@ class Users:
 
         return res
 
+    
     def read_user(self, request: operations.ReadUserRequest) -> operations.ReadUserResponse:
         r"""Read user
         Read user

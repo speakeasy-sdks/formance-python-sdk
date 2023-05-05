@@ -35,7 +35,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = shared.StripeTransferRequest(
     amount=100,
     asset='USD',
@@ -69,7 +68,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetConnectorTaskRequest(
     connector=shared.ConnectorEnum.BANKING_CIRCLE,
     task_id='ipsa',
@@ -97,7 +95,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetPaymentRequest(
     payment_id='omnis',
 )
@@ -123,7 +120,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.InstallConnectorRequest(
     request_body=shared.WiseConfig(
@@ -200,7 +196,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ListConnectorTasksRequest(
     connector=shared.ConnectorEnum.STRIPE,
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
@@ -228,7 +223,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.ListPaymentsRequest(
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
@@ -261,7 +255,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.PaymentslistAccountsRequest(
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     page_size=359444,
@@ -293,7 +286,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ReadConnectorConfigRequest(
     connector=shared.ConnectorEnum.CURRENCY_CLOUD,
 )
@@ -322,7 +314,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ResetConnectorRequest(
     connector=shared.ConnectorEnum.DUMMY_PAY,
 )
@@ -348,7 +339,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UninstallConnectorRequest(
     connector=shared.ConnectorEnum.BANKING_CIRCLE,

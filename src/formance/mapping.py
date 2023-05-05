@@ -22,6 +22,7 @@ class Mapping:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_mapping(self, request: operations.GetMappingRequest) -> operations.GetMappingResponse:
         r"""Get the mapping of a ledger"""
         base_url = self._server_url
@@ -47,6 +48,7 @@ class Mapping:
 
         return res
 
+    
     def update_mapping(self, request: operations.UpdateMappingRequest) -> operations.UpdateMappingResponse:
         r"""Update the mapping of a ledger"""
         base_url = self._server_url

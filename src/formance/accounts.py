@@ -22,6 +22,7 @@ class Accounts:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def add_metadata_to_account(self, request: operations.AddMetadataToAccountRequest) -> operations.AddMetadataToAccountResponse:
         r"""Add metadata to an account"""
         base_url = self._server_url
@@ -51,6 +52,7 @@ class Accounts:
 
         return res
 
+    
     def count_accounts(self, request: operations.CountAccountsRequest) -> operations.CountAccountsResponse:
         r"""Count the accounts from a ledger"""
         base_url = self._server_url
@@ -76,6 +78,7 @@ class Accounts:
 
         return res
 
+    
     def get_account(self, request: operations.GetAccountRequest) -> operations.GetAccountResponse:
         r"""Get account by its address"""
         base_url = self._server_url
@@ -101,6 +104,7 @@ class Accounts:
 
         return res
 
+    
     def list_accounts(self, request: operations.ListAccountsRequest) -> operations.ListAccountsResponse:
         r"""List accounts from a ledger
         List accounts from a ledger, sorted by address in descending order.

@@ -38,7 +38,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ConfirmHoldRequest(
     confirm_hold_request=shared.ConfirmHoldRequest(
         amount=100,
@@ -69,7 +68,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.CreateBalanceRequest(
     create_balance_request=shared.CreateBalanceRequest(
         name='Doyle Gibson',
@@ -98,7 +96,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = shared.CreateWalletRequest(
     metadata={
@@ -129,7 +126,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.CreditWalletRequest(
     credit_wallet_request=shared.CreditWalletRequest(
@@ -177,7 +173,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.DebitWalletRequest(
     debit_wallet_request=shared.DebitWalletRequest(
         amount=shared.Monetary(
@@ -224,7 +219,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetBalanceRequest(
     balance_name='eius',
     id='203ce5e6-a95d-48a0-9446-ce2af7a73cf3',
@@ -252,7 +246,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetHoldRequest(
     hold_id='tempore',
 )
@@ -278,7 +271,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetHoldsRequest(
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
@@ -312,7 +304,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetTransactionsRequest(
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     page_size=424685,
@@ -341,7 +332,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetWalletRequest(
     id='5a73429c-db1a-4842-abb6-79d2322715bf',
 )
@@ -368,7 +358,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ListBalancesRequest(
     id='0cbb1e31-b8b9-40f3-843a-1108e0adcf4b',
 )
@@ -394,7 +383,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.ListWalletsRequest(
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
@@ -429,7 +417,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.UpdateWalletRequest(
     request_body=operations.UpdateWalletRequestBody(
         metadata={
@@ -461,7 +448,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.VoidHoldRequest(
     hold_id='vel',

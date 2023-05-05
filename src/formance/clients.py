@@ -22,6 +22,7 @@ class Clients:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def add_scope_to_client(self, request: operations.AddScopeToClientRequest) -> operations.AddScopeToClientResponse:
         r"""Add scope to client"""
         base_url = self._server_url
@@ -39,6 +40,7 @@ class Clients:
 
         return res
 
+    
     def create_client(self, request: shared.CreateClientRequest) -> operations.CreateClientResponse:
         r"""Create client"""
         base_url = self._server_url
@@ -64,6 +66,7 @@ class Clients:
 
         return res
 
+    
     def create_secret(self, request: operations.CreateSecretRequest) -> operations.CreateSecretResponse:
         r"""Add a secret to a client"""
         base_url = self._server_url
@@ -89,6 +92,7 @@ class Clients:
 
         return res
 
+    
     def delete_client(self, request: operations.DeleteClientRequest) -> operations.DeleteClientResponse:
         r"""Delete client"""
         base_url = self._server_url
@@ -106,6 +110,7 @@ class Clients:
 
         return res
 
+    
     def delete_scope_from_client(self, request: operations.DeleteScopeFromClientRequest) -> operations.DeleteScopeFromClientResponse:
         r"""Delete scope from client"""
         base_url = self._server_url
@@ -123,6 +128,7 @@ class Clients:
 
         return res
 
+    
     def delete_secret(self, request: operations.DeleteSecretRequest) -> operations.DeleteSecretResponse:
         r"""Delete a secret from a client"""
         base_url = self._server_url
@@ -140,6 +146,7 @@ class Clients:
 
         return res
 
+    
     def list_clients(self) -> operations.ListClientsResponse:
         r"""List clients"""
         base_url = self._server_url
@@ -161,6 +168,7 @@ class Clients:
 
         return res
 
+    
     def read_client(self, request: operations.ReadClientRequest) -> operations.ReadClientResponse:
         r"""Read client"""
         base_url = self._server_url
@@ -182,6 +190,7 @@ class Clients:
 
         return res
 
+    
     def update_client(self, request: operations.UpdateClientRequest) -> operations.UpdateClientResponse:
         r"""Update client"""
         base_url = self._server_url

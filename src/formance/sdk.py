@@ -82,8 +82,8 @@ class Formance:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "0.12.0"
-    _gen_version: str = "2.24.0"
+    _sdk_version: str = "0.13.0"
+    _gen_version: str = "2.26.0"
 
     def __init__(self,
                  security: shared.Security = None,
@@ -273,6 +273,7 @@ class Formance:
             self._gen_version
         )
         
+    
     def get_server_info(self) -> operations.GetServerInfoResponse:
         r"""Get server info"""
         base_url = self._server_url
@@ -294,6 +295,7 @@ class Formance:
 
         return res
 
+    
     def paymentsget_server_info(self) -> operations.PaymentsgetServerInfoResponse:
         r"""Get server info"""
         base_url = self._server_url
@@ -315,6 +317,7 @@ class Formance:
 
         return res
 
+    
     def searchget_server_info(self) -> operations.SearchgetServerInfoResponse:
         r"""Get server info"""
         base_url = self._server_url

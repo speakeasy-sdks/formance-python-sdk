@@ -22,6 +22,7 @@ class Webhooks:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def activate_config(self, request: operations.ActivateConfigRequest) -> operations.ActivateConfigResponse:
         r"""Activate one config
         Activate a webhooks config by ID, to start receiving webhooks to its endpoint.
@@ -47,6 +48,7 @@ class Webhooks:
 
         return res
 
+    
     def change_config_secret(self, request: operations.ChangeConfigSecretRequest) -> operations.ChangeConfigSecretResponse:
         r"""Change the signing secret of a config
         Change the signing secret of the endpoint of a webhooks config.
@@ -77,6 +79,7 @@ class Webhooks:
 
         return res
 
+    
     def deactivate_config(self, request: operations.DeactivateConfigRequest) -> operations.DeactivateConfigResponse:
         r"""Deactivate one config
         Deactivate a webhooks config by ID, to stop receiving webhooks to its endpoint.
@@ -102,6 +105,7 @@ class Webhooks:
 
         return res
 
+    
     def delete_config(self, request: operations.DeleteConfigRequest) -> operations.DeleteConfigResponse:
         r"""Delete one config
         Delete a webhooks config by ID.
@@ -121,6 +125,7 @@ class Webhooks:
 
         return res
 
+    
     def get_many_configs(self, request: operations.GetManyConfigsRequest) -> operations.GetManyConfigsResponse:
         r"""Get many configs
         Sorted by updated date descending
@@ -145,6 +150,7 @@ class Webhooks:
 
         return res
 
+    
     def insert_config(self, request: shared.ConfigUser) -> operations.InsertConfigResponse:
         r"""Insert a new config
         Insert a new webhooks config.
@@ -185,6 +191,7 @@ class Webhooks:
 
         return res
 
+    
     def test_config(self, request: operations.TestConfigRequest) -> operations.TestConfigResponse:
         r"""Test one config
         Test a config by sending a webhook to its endpoint.

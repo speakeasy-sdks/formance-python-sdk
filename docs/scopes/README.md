@@ -30,7 +30,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.AddTransientScopeRequest(
     scope_id='commodi',
     transient_scope_id='repudiandae',
@@ -57,7 +56,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = shared.CreateScopeRequest(
     label='quae',
@@ -88,7 +86,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.DeleteScopeRequest(
     scope_id='excepturi',
 )
@@ -114,7 +111,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.DeleteTransientScopeRequest(
     scope_id='pariatur',
@@ -166,7 +162,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ReadScopeRequest(
     scope_id='praesentium',
 )
@@ -192,7 +187,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateScopeRequest(
     update_scope_request=shared.UpdateScopeRequest(

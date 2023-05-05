@@ -22,6 +22,7 @@ class Scopes:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def add_transient_scope(self, request: operations.AddTransientScopeRequest) -> operations.AddTransientScopeResponse:
         r"""Add a transient scope to a scope
         Add a transient scope to a scope
@@ -41,6 +42,7 @@ class Scopes:
 
         return res
 
+    
     def create_scope(self, request: shared.CreateScopeRequest) -> operations.CreateScopeResponse:
         r"""Create scope
         Create scope
@@ -68,6 +70,7 @@ class Scopes:
 
         return res
 
+    
     def delete_scope(self, request: operations.DeleteScopeRequest) -> operations.DeleteScopeResponse:
         r"""Delete scope
         Delete scope
@@ -87,6 +90,7 @@ class Scopes:
 
         return res
 
+    
     def delete_transient_scope(self, request: operations.DeleteTransientScopeRequest) -> operations.DeleteTransientScopeResponse:
         r"""Delete a transient scope from a scope
         Delete a transient scope from a scope
@@ -106,6 +110,7 @@ class Scopes:
 
         return res
 
+    
     def list_scopes(self) -> operations.ListScopesResponse:
         r"""List scopes
         List Scopes
@@ -129,6 +134,7 @@ class Scopes:
 
         return res
 
+    
     def read_scope(self, request: operations.ReadScopeRequest) -> operations.ReadScopeResponse:
         r"""Read scope
         Read scope
@@ -152,6 +158,7 @@ class Scopes:
 
         return res
 
+    
     def update_scope(self, request: operations.UpdateScopeRequest) -> operations.UpdateScopeResponse:
         r"""Update scope
         Update scope

@@ -31,7 +31,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.CreateTransactionsRequest(
     transactions=shared.Transactions(
         transactions=[
@@ -159,7 +158,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.AddMetadataOnTransactionRequest(
     request_body={
         "accusamus": 'non',
@@ -192,7 +190,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.CountTransactionsRequest(
     account='users:001',
@@ -233,7 +230,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.CreateTransactionRequest(
     post_transaction=shared.PostTransaction(
@@ -298,7 +294,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetTransactionRequest(
     ledger='ledger001',
     txid=1234,
@@ -326,7 +321,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.ListTransactionsRequest(
     account='users:001',
@@ -371,7 +365,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.RevertTransactionRequest(
     ledger='ledger001',

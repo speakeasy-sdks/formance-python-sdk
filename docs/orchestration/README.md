@@ -30,7 +30,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = shared.CreateWorkflowRequest(
     stages=[
         {
@@ -76,7 +75,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetFlowRequest(
     flow_id='tenetur',
 )
@@ -102,7 +100,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetWorkflowOccurrenceRequest(
     flow_id='ipsam',
@@ -154,7 +151,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ListRunsRequest(
     flow_id='possimus',
 )
@@ -203,7 +199,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.RunWorkflowRequest(
     request_body={

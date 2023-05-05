@@ -22,6 +22,7 @@ class Server:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_info(self) -> operations.GetInfoResponse:
         r"""Show server information"""
         base_url = self._server_url

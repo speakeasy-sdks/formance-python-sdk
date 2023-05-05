@@ -22,6 +22,7 @@ class Wallets:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def confirm_hold(self, request: operations.ConfirmHoldRequest) -> operations.ConfirmHoldResponse:
         r"""Confirm a hold"""
         base_url = self._server_url
@@ -49,6 +50,7 @@ class Wallets:
 
         return res
 
+    
     def create_balance(self, request: operations.CreateBalanceRequest) -> operations.CreateBalanceResponse:
         r"""Create a balance"""
         base_url = self._server_url
@@ -78,6 +80,7 @@ class Wallets:
 
         return res
 
+    
     def create_wallet(self, request: shared.CreateWalletRequest) -> operations.CreateWalletResponse:
         r"""Create a new wallet"""
         base_url = self._server_url
@@ -107,6 +110,7 @@ class Wallets:
 
         return res
 
+    
     def credit_wallet(self, request: operations.CreditWalletRequest) -> operations.CreditWalletResponse:
         r"""Credit a wallet"""
         base_url = self._server_url
@@ -134,6 +138,7 @@ class Wallets:
 
         return res
 
+    
     def debit_wallet(self, request: operations.DebitWalletRequest) -> operations.DebitWalletResponse:
         r"""Debit a wallet"""
         base_url = self._server_url
@@ -165,6 +170,7 @@ class Wallets:
 
         return res
 
+    
     def get_balance(self, request: operations.GetBalanceRequest) -> operations.GetBalanceResponse:
         r"""Get detailed balance"""
         base_url = self._server_url
@@ -190,6 +196,7 @@ class Wallets:
 
         return res
 
+    
     def get_hold(self, request: operations.GetHoldRequest) -> operations.GetHoldResponse:
         r"""Get a hold"""
         base_url = self._server_url
@@ -215,6 +222,7 @@ class Wallets:
 
         return res
 
+    
     def get_holds(self, request: operations.GetHoldsRequest) -> operations.GetHoldsResponse:
         r"""Get all holds for a wallet"""
         base_url = self._server_url
@@ -241,6 +249,7 @@ class Wallets:
 
         return res
 
+    
     def get_transactions(self, request: operations.GetTransactionsRequest) -> operations.GetTransactionsResponse:
         base_url = self._server_url
         
@@ -266,6 +275,7 @@ class Wallets:
 
         return res
 
+    
     def get_wallet(self, request: operations.GetWalletRequest) -> operations.GetWalletResponse:
         r"""Get a wallet"""
         base_url = self._server_url
@@ -293,6 +303,7 @@ class Wallets:
 
         return res
 
+    
     def list_balances(self, request: operations.ListBalancesRequest) -> operations.ListBalancesResponse:
         r"""List balances of a wallet"""
         base_url = self._server_url
@@ -314,6 +325,7 @@ class Wallets:
 
         return res
 
+    
     def list_wallets(self, request: operations.ListWalletsRequest) -> operations.ListWalletsResponse:
         r"""List all wallets"""
         base_url = self._server_url
@@ -336,6 +348,7 @@ class Wallets:
 
         return res
 
+    
     def update_wallet(self, request: operations.UpdateWalletRequest) -> operations.UpdateWalletResponse:
         r"""Update a wallet"""
         base_url = self._server_url
@@ -363,6 +376,7 @@ class Wallets:
 
         return res
 
+    
     def void_hold(self, request: operations.VoidHoldRequest) -> operations.VoidHoldResponse:
         r"""Cancel a hold"""
         base_url = self._server_url
@@ -386,6 +400,7 @@ class Wallets:
 
         return res
 
+    
     def walletsget_server_info(self) -> operations.WalletsgetServerInfoResponse:
         r"""Get server info"""
         base_url = self._server_url

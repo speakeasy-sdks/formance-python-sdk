@@ -48,7 +48,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ReadUserRequest(
     user_id='quasi',
 )

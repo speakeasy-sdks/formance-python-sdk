@@ -24,7 +24,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetLedgerInfoRequest(
     ledger='ledger001',
 )

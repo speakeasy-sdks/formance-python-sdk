@@ -22,6 +22,7 @@ class Ledger:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_ledger_info(self, request: operations.GetLedgerInfoRequest) -> operations.GetLedgerInfoResponse:
         r"""Get information about a ledger"""
         base_url = self._server_url

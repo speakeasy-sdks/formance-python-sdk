@@ -22,6 +22,7 @@ class Script:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def run_script(self, request: operations.RunScriptRequest) -> operations.RunScriptResponse:
         r"""Execute a Numscript
         This route is deprecated, and has been merged into `POST /{ledger}/transactions`.

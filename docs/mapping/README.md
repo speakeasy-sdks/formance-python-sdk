@@ -25,7 +25,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.GetMappingRequest(
     ledger='ledger001',
 )
@@ -51,7 +50,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateMappingRequest(
     mapping=shared.Mapping(

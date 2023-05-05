@@ -22,6 +22,7 @@ class Orchestration:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_workflow(self, request: shared.CreateWorkflowRequest) -> operations.CreateWorkflowResponse:
         r"""Create workflow
         Create a workflow
@@ -53,6 +54,7 @@ class Orchestration:
 
         return res
 
+    
     def get_flow(self, request: operations.GetFlowRequest) -> operations.GetFlowResponse:
         r"""Get a flow by id
         Get a flow by id
@@ -80,6 +82,7 @@ class Orchestration:
 
         return res
 
+    
     def get_workflow_occurrence(self, request: operations.GetWorkflowOccurrenceRequest) -> operations.GetWorkflowOccurrenceResponse:
         r"""Get a workflow occurrence by id
         Get a workflow occurrence by id
@@ -107,6 +110,7 @@ class Orchestration:
 
         return res
 
+    
     def list_flows(self) -> operations.ListFlowsResponse:
         r"""List registered flows
         List registered flows
@@ -134,6 +138,7 @@ class Orchestration:
 
         return res
 
+    
     def list_runs(self, request: operations.ListRunsRequest) -> operations.ListRunsResponse:
         r"""List occurrences of a workflow
         List occurrences of a workflow
@@ -161,6 +166,7 @@ class Orchestration:
 
         return res
 
+    
     def orchestrationget_server_info(self) -> operations.OrchestrationgetServerInfoResponse:
         r"""Get server info"""
         base_url = self._server_url
@@ -186,6 +192,7 @@ class Orchestration:
 
         return res
 
+    
     def run_workflow(self, request: operations.RunWorkflowRequest) -> operations.RunWorkflowResponse:
         r"""Run workflow
         Run workflow

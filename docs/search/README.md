@@ -24,7 +24,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = shared.Query(
     after=[
         'users:002',

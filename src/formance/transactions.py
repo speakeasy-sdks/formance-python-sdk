@@ -22,6 +22,7 @@ class Transactions:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_transactions(self, request: operations.CreateTransactionsRequest) -> operations.CreateTransactionsResponse:
         r"""Create a new batch of transactions to a ledger"""
         base_url = self._server_url
@@ -53,6 +54,7 @@ class Transactions:
 
         return res
 
+    
     def add_metadata_on_transaction(self, request: operations.AddMetadataOnTransactionRequest) -> operations.AddMetadataOnTransactionResponse:
         r"""Set the metadata of a transaction by its ID"""
         base_url = self._server_url
@@ -80,6 +82,7 @@ class Transactions:
 
         return res
 
+    
     def count_transactions(self, request: operations.CountTransactionsRequest) -> operations.CountTransactionsResponse:
         r"""Count the transactions from a ledger"""
         base_url = self._server_url
@@ -105,6 +108,7 @@ class Transactions:
 
         return res
 
+    
     def create_transaction(self, request: operations.CreateTransactionRequest) -> operations.CreateTransactionResponse:
         r"""Create a new transaction to a ledger"""
         base_url = self._server_url
@@ -137,6 +141,7 @@ class Transactions:
 
         return res
 
+    
     def get_transaction(self, request: operations.GetTransactionRequest) -> operations.GetTransactionResponse:
         r"""Get transaction from a ledger by its ID"""
         base_url = self._server_url
@@ -162,6 +167,7 @@ class Transactions:
 
         return res
 
+    
     def list_transactions(self, request: operations.ListTransactionsRequest) -> operations.ListTransactionsResponse:
         r"""List transactions from a ledger
         List transactions from a ledger, sorted by txid in descending order.
@@ -190,6 +196,7 @@ class Transactions:
 
         return res
 
+    
     def revert_transaction(self, request: operations.RevertTransactionRequest) -> operations.RevertTransactionResponse:
         r"""Revert a ledger transaction by its ID"""
         base_url = self._server_url

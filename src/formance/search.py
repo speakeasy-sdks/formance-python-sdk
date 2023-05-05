@@ -22,6 +22,7 @@ class Search:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def search(self, request: shared.Query) -> operations.SearchResponse:
         r"""Search
         ElasticSearch query engine

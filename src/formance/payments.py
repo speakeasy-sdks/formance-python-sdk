@@ -22,6 +22,7 @@ class Payments:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def connectors_stripe_transfer(self, request: shared.StripeTransferRequest) -> operations.ConnectorsStripeTransferResponse:
         r"""Transfer funds between Stripe accounts
         Execute a transfer between two Stripe accounts.
@@ -51,6 +52,7 @@ class Payments:
 
         return res
 
+    
     def get_connector_task(self, request: operations.GetConnectorTaskRequest) -> operations.GetConnectorTaskResponse:
         r"""Read a specific task of the connector
         Get a specific task associated to the connector.
@@ -74,6 +76,7 @@ class Payments:
 
         return res
 
+    
     def get_payment(self, request: operations.GetPaymentRequest) -> operations.GetPaymentResponse:
         r"""Get a payment"""
         base_url = self._server_url
@@ -95,6 +98,7 @@ class Payments:
 
         return res
 
+    
     def install_connector(self, request: operations.InstallConnectorRequest) -> operations.InstallConnectorResponse:
         r"""Install a connector
         Install a connector by its name and config.
@@ -120,6 +124,7 @@ class Payments:
 
         return res
 
+    
     def list_all_connectors(self) -> operations.ListAllConnectorsResponse:
         r"""List all installed connectors
         List all installed connectors.
@@ -143,6 +148,7 @@ class Payments:
 
         return res
 
+    
     def list_configs_available_connectors(self) -> operations.ListConfigsAvailableConnectorsResponse:
         r"""List the configs of each available connector
         List the configs of each available connector.
@@ -166,6 +172,7 @@ class Payments:
 
         return res
 
+    
     def list_connector_tasks(self, request: operations.ListConnectorTasksRequest) -> operations.ListConnectorTasksResponse:
         r"""List tasks from a connector
         List all tasks associated with this connector.
@@ -190,6 +197,7 @@ class Payments:
 
         return res
 
+    
     def list_payments(self, request: operations.ListPaymentsRequest) -> operations.ListPaymentsResponse:
         r"""List payments"""
         base_url = self._server_url
@@ -212,6 +220,7 @@ class Payments:
 
         return res
 
+    
     def paymentslist_accounts(self, request: operations.PaymentslistAccountsRequest) -> operations.PaymentslistAccountsResponse:
         r"""List accounts"""
         base_url = self._server_url
@@ -234,6 +243,7 @@ class Payments:
 
         return res
 
+    
     def read_connector_config(self, request: operations.ReadConnectorConfigRequest) -> operations.ReadConnectorConfigResponse:
         r"""Read the config of a connector
         Read connector config
@@ -257,6 +267,7 @@ class Payments:
 
         return res
 
+    
     def reset_connector(self, request: operations.ResetConnectorRequest) -> operations.ResetConnectorResponse:
         r"""Reset a connector
         Reset a connector by its name.
@@ -277,6 +288,7 @@ class Payments:
 
         return res
 
+    
     def uninstall_connector(self, request: operations.UninstallConnectorRequest) -> operations.UninstallConnectorResponse:
         r"""Uninstall a connector
         Uninstall a connector by its name.

@@ -32,7 +32,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.AddScopeToClientRequest(
     client_id='temporibus',
     scope_id='ab',
@@ -59,7 +58,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = shared.CreateClientRequest(
     description='quis',
@@ -105,7 +103,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.CreateSecretRequest(
     create_secret_request=shared.CreateSecretRequest(
         metadata={
@@ -138,7 +135,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.DeleteClientRequest(
     client_id='beatae',
 )
@@ -164,7 +160,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.DeleteScopeFromClientRequest(
     client_id='commodi',
@@ -192,7 +187,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.DeleteSecretRequest(
     client_id='modi',
@@ -244,7 +238,6 @@ s = formance.Formance(
     ),
 )
 
-
 req = operations.ReadClientRequest(
     client_id='impedit',
 )
@@ -270,7 +263,6 @@ s = formance.Formance(
         authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateClientRequest(
     update_client_request=shared.UpdateClientRequest(
