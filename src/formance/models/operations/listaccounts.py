@@ -34,6 +34,8 @@ class ListAccountsRequest:
     balance_operator_deprecated: Optional[ListAccountsBalanceOperatorEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balance_operator', 'style': 'form', 'explode': True }})
     r"""Operator used for the filtering of balances can be greater than/equal, less than/equal, greater than, less than, equal or not.
     Deprecated, please use `balanceOperator` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     r"""Parameter used in pagination requests. Maximum page size is set to 15.
@@ -48,6 +50,8 @@ class ListAccountsRequest:
     page_size_deprecated: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
     r"""The maximum number of results to return per page.
     Deprecated, please use `pageSize` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     pagination_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pagination_token', 'style': 'form', 'explode': True }})
     r"""Parameter used in pagination requests. Maximum page size is set to 15.
@@ -55,6 +59,8 @@ class ListAccountsRequest:
     Set to the value of previous for the previous page of results.
     No other parameters can be set when this parameter is set.
     Deprecated, please use `cursor` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     
 

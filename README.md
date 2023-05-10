@@ -125,7 +125,7 @@ if res.server_info is not None:
 
 ### [script](docs/script/README.md)
 
-* [run_script](docs/script/README.md#run_script) - Execute a Numscript
+* [~~run_script~~](docs/script/README.md#run_script) - Execute a Numscript :warning: **Deprecated**
 
 ### [search](docs/search/README.md)
 

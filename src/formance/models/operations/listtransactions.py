@@ -34,6 +34,8 @@ class ListTransactionsRequest:
     r"""Filter transactions that occurred before this timestamp.
     The format is RFC3339 and is exclusive (for example, \"2023-01-02T15:04:01Z\" excludes the first second of 4th minute).
     Deprecated, please use `endTime` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
     r"""Filter transactions by metadata key value pairs. Nested objects can be used as seen in the example below."""
@@ -42,6 +44,8 @@ class ListTransactionsRequest:
     page_size_deprecated: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
     r"""The maximum number of results to return per page.
     Deprecated, please use `pageSize` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     pagination_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pagination_token', 'style': 'form', 'explode': True }})
     r"""Parameter used in pagination requests. Maximum page size is set to 15.
@@ -49,6 +53,8 @@ class ListTransactionsRequest:
     Set to the value of previous for the previous page of results.
     No other parameters can be set when this parameter is set.
     Deprecated, please use `cursor` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     reference: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reference', 'style': 'form', 'explode': True }})
     r"""Find transactions by reference field."""
@@ -62,6 +68,8 @@ class ListTransactionsRequest:
     r"""Filter transactions that occurred after this timestamp.
     The format is RFC3339 and is inclusive (for example, \"2023-01-02T15:04:01Z\" includes the first second of 4th minute).
     Deprecated, please use `startTime` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     
 

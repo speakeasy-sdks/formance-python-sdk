@@ -26,6 +26,8 @@ class Script:
     def run_script(self, request: operations.RunScriptRequest) -> operations.RunScriptResponse:
         r"""Execute a Numscript
         This route is deprecated, and has been merged into `POST /{ledger}/transactions`.
+        
+        Deprecated: this method will be removed in a future release, please migrate away from it as soon as possible
         """
         base_url = self._server_url
         

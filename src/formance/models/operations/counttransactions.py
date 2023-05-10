@@ -25,6 +25,8 @@ class CountTransactionsRequest:
     r"""Filter transactions that occurred before this timestamp.
     The format is RFC3339 and is exclusive (for example, \"2023-01-02T15:04:01Z\" excludes the first second of 4th minute).
     Deprecated, please use `endTime` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
     r"""Filter transactions by metadata key value pairs. Nested objects can be used as seen in the example below."""
@@ -40,6 +42,8 @@ class CountTransactionsRequest:
     r"""Filter transactions that occurred after this timestamp.
     The format is RFC3339 and is inclusive (for example, \"2023-01-02T15:04:01Z\" includes the first second of 4th minute).
     Deprecated, please use `startTime` instead.
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     
 
