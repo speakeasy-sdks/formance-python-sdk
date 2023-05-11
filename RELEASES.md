@@ -241,3 +241,11 @@ Based on:
 - Speakeasy CLI 1.29.2 (2.26.2) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [PyPI v0.13.2] https://pypi.org/project/formance-python-sdk/0.13.2 - .
+
+## 2023-05-11 01:07:07
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 ./stack.yaml
+- Speakeasy CLI 1.30.0 (2.26.3) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v0.13.3] https://pypi.org/project/formance-python-sdk/0.13.3 - .
