@@ -32,7 +32,6 @@ class Script:
         base_url = self._server_url
         
         url = utils.generate_url(operations.RunScriptRequest, base_url, '/api/ledger/{ledger}/script', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "script", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -40,6 +39,7 @@ class Script:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.RunScriptRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         

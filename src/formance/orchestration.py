@@ -30,11 +30,11 @@ class Orchestration:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/orchestration/flows'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -62,11 +62,12 @@ class Orchestration:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetFlowRequest, base_url, '/api/orchestration/flows/{flowId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetFlowResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -90,11 +91,12 @@ class Orchestration:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetWorkflowOccurrenceRequest, base_url, '/api/orchestration/flows/{flowId}/runs/{runId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetWorkflowOccurrenceResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -118,11 +120,12 @@ class Orchestration:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/orchestration/flows'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListFlowsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -146,11 +149,12 @@ class Orchestration:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListRunsRequest, base_url, '/api/orchestration/flows/{flowId}/runs', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListRunsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -172,11 +176,12 @@ class Orchestration:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/orchestration/_info'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.OrchestrationgetServerInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -200,12 +205,12 @@ class Orchestration:
         base_url = self._server_url
         
         url = utils.generate_url(operations.RunWorkflowRequest, base_url, '/api/orchestration/flows/{flowId}/runs', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.RunWorkflowRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         

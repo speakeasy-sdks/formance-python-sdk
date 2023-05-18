@@ -28,12 +28,13 @@ class Balances:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetBalancesRequest, base_url, '/api/ledger/{ledger}/balances', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetBalancesRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetBalancesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -55,12 +56,13 @@ class Balances:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetBalancesAggregatedRequest, base_url, '/api/ledger/{ledger}/aggregate/balances', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetBalancesAggregatedRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetBalancesAggregatedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

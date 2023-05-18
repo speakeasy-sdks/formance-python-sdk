@@ -30,13 +30,13 @@ class Payments:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/payments/connectors/stripe/transfer'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -60,11 +60,12 @@ class Payments:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetConnectorTaskRequest, base_url, '/api/payments/connectors/{connector}/tasks/{taskId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetConnectorTaskResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -82,11 +83,12 @@ class Payments:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetPaymentRequest, base_url, '/api/payments/payments/{paymentId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPaymentResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -106,13 +108,13 @@ class Payments:
         base_url = self._server_url
         
         url = utils.generate_url(operations.InstallConnectorRequest, base_url, '/api/payments/connectors/{connector}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -132,11 +134,12 @@ class Payments:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/payments/connectors'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListAllConnectorsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -156,11 +159,12 @@ class Payments:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/payments/connectors/configs'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListConfigsAvailableConnectorsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -180,12 +184,13 @@ class Payments:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListConnectorTasksRequest, base_url, '/api/payments/connectors/{connector}/tasks', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListConnectorTasksRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListConnectorTasksResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -203,12 +208,13 @@ class Payments:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/payments/payments'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListPaymentsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListPaymentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -226,12 +232,13 @@ class Payments:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/payments/accounts'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.PaymentslistAccountsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.PaymentslistAccountsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -251,11 +258,12 @@ class Payments:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ReadConnectorConfigRequest, base_url, '/api/payments/connectors/{connector}/config', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ReadConnectorConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -276,11 +284,12 @@ class Payments:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ResetConnectorRequest, base_url, '/api/payments/connectors/{connector}/reset', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ResetConnectorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -296,11 +305,12 @@ class Payments:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UninstallConnectorRequest, base_url, '/api/payments/connectors/{connector}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.UninstallConnectorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

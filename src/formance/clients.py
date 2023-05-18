@@ -28,11 +28,12 @@ class Clients:
         base_url = self._server_url
         
         url = utils.generate_url(operations.AddScopeToClientRequest, base_url, '/api/auth/clients/{clientId}/scopes/{scopeId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('PUT', url)
+        http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.AddScopeToClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -46,11 +47,11 @@ class Clients:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/auth/clients'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -72,11 +73,11 @@ class Clients:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateSecretRequest, base_url, '/api/auth/clients/{clientId}/secrets', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "create_secret_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -98,11 +99,12 @@ class Clients:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteClientRequest, base_url, '/api/auth/clients/{clientId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -116,11 +118,12 @@ class Clients:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteScopeFromClientRequest, base_url, '/api/auth/clients/{clientId}/scopes/{scopeId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteScopeFromClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -134,11 +137,12 @@ class Clients:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteSecretRequest, base_url, '/api/auth/clients/{clientId}/secrets/{secretId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteSecretResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -152,11 +156,12 @@ class Clients:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/auth/clients'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListClientsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -174,11 +179,12 @@ class Clients:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ReadClientRequest, base_url, '/api/auth/clients/{clientId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ReadClientResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -196,11 +202,11 @@ class Clients:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateClientRequest, base_url, '/api/auth/clients/{clientId}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "update_client_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         

@@ -30,11 +30,12 @@ class Scopes:
         base_url = self._server_url
         
         url = utils.generate_url(operations.AddTransientScopeRequest, base_url, '/api/auth/scopes/{scopeId}/transient/{transientScopeId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('PUT', url)
+        http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.AddTransientScopeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -50,11 +51,11 @@ class Scopes:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/auth/scopes'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -78,11 +79,12 @@ class Scopes:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteScopeRequest, base_url, '/api/auth/scopes/{scopeId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteScopeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -98,11 +100,12 @@ class Scopes:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteTransientScopeRequest, base_url, '/api/auth/scopes/{scopeId}/transient/{transientScopeId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteTransientScopeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -118,11 +121,12 @@ class Scopes:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/auth/scopes'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListScopesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -142,11 +146,12 @@ class Scopes:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ReadScopeRequest, base_url, '/api/auth/scopes/{scopeId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ReadScopeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -166,11 +171,11 @@ class Scopes:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateScopeRequest, base_url, '/api/auth/scopes/{scopeId}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "update_scope_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         

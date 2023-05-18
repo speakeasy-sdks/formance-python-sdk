@@ -28,11 +28,11 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ConfirmHoldRequest, base_url, '/api/wallets/holds/{hold_id}/confirm', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "confirm_hold_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -56,11 +56,11 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateBalanceRequest, base_url, '/api/wallets/wallets/{id}/balances', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "create_balance_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -86,11 +86,11 @@ class Wallets:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/wallets/wallets'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -116,11 +116,11 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreditWalletRequest, base_url, '/api/wallets/wallets/{id}/credit', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "credit_wallet_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -144,11 +144,11 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DebitWalletRequest, base_url, '/api/wallets/wallets/{id}/debit', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "debit_wallet_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -176,11 +176,12 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetBalanceRequest, base_url, '/api/wallets/wallets/{id}/balances/{balanceName}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetBalanceResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -202,11 +203,12 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetHoldRequest, base_url, '/api/wallets/holds/{holdID}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetHoldResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -228,12 +230,13 @@ class Wallets:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/wallets/holds'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetHoldsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetHoldsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -254,12 +257,13 @@ class Wallets:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/wallets/transactions'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetTransactionsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetTransactionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -281,11 +285,12 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetWalletRequest, base_url, '/api/wallets/wallets/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetWalletResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -309,11 +314,12 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListBalancesRequest, base_url, '/api/wallets/wallets/{id}/balances', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListBalancesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -331,12 +337,13 @@ class Wallets:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/wallets/wallets'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListWalletsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListWalletsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -354,11 +361,11 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateWalletRequest, base_url, '/api/wallets/wallets/{id}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -382,11 +389,12 @@ class Wallets:
         base_url = self._server_url
         
         url = utils.generate_url(operations.VoidHoldRequest, base_url, '/api/wallets/holds/{hold_id}/void', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.VoidHoldResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -406,11 +414,12 @@ class Wallets:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/wallets/_info'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.WalletsgetServerInfoResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

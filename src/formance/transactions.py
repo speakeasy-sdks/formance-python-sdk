@@ -28,13 +28,13 @@ class Transactions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateTransactionsRequest, base_url, '/api/ledger/{ledger}/transactions/batch', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "transactions", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -60,11 +60,11 @@ class Transactions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.AddMetadataOnTransactionRequest, base_url, '/api/ledger/{ledger}/transactions/{txid}/metadata', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -88,12 +88,13 @@ class Transactions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CountTransactionsRequest, base_url, '/api/ledger/{ledger}/transactions', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.CountTransactionsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('HEAD', url, params=query_params)
+        http_res = client.request('HEAD', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.CountTransactionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -114,7 +115,6 @@ class Transactions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateTransactionRequest, base_url, '/api/ledger/{ledger}/transactions', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "post_transaction", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -122,6 +122,7 @@ class Transactions:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.CreateTransactionRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -147,11 +148,12 @@ class Transactions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetTransactionRequest, base_url, '/api/ledger/{ledger}/transactions/{txid}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetTransactionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -175,12 +177,13 @@ class Transactions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListTransactionsRequest, base_url, '/api/ledger/{ledger}/transactions', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListTransactionsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListTransactionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -202,11 +205,12 @@ class Transactions:
         base_url = self._server_url
         
         url = utils.generate_url(operations.RevertTransactionRequest, base_url, '/api/ledger/{ledger}/transactions/{txid}/revert', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.RevertTransactionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

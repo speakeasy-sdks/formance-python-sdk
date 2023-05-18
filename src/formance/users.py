@@ -30,11 +30,12 @@ class Users:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/api/auth/users'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -54,11 +55,12 @@ class Users:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ReadUserRequest, base_url, '/api/auth/users/{userId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ReadUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
