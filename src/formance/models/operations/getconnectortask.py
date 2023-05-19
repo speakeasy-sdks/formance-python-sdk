@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connector_enum as shared_connector_enum
+from ..shared import connector as shared_connector
 from ..shared import taskresponse as shared_taskresponse
 from typing import Optional
 
@@ -11,7 +11,7 @@ from typing import Optional
 @dataclasses.dataclass
 class GetConnectorTaskRequest:
     
-    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
+    connector: shared_connector.Connector = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
     r"""The name of the connector."""
     task_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taskId', 'style': 'simple', 'explode': False }})
     r"""The task ID."""

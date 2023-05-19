@@ -32,6 +32,7 @@ class Wallets:
         req_content_type, data, form = utils.serialize_request_body(request, "confirm_hold_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -60,6 +61,7 @@ class Wallets:
         req_content_type, data, form = utils.serialize_request_body(request, "create_balance_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -90,6 +92,7 @@ class Wallets:
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -120,6 +123,7 @@ class Wallets:
         req_content_type, data, form = utils.serialize_request_body(request, "credit_wallet_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -148,6 +152,7 @@ class Wallets:
         req_content_type, data, form = utils.serialize_request_body(request, "debit_wallet_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -177,6 +182,7 @@ class Wallets:
         
         url = utils.generate_url(operations.GetBalanceRequest, base_url, '/api/wallets/wallets/{id}/balances/{balanceName}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -204,6 +210,7 @@ class Wallets:
         
         url = utils.generate_url(operations.GetHoldRequest, base_url, '/api/wallets/holds/{holdID}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -232,6 +239,7 @@ class Wallets:
         url = base_url.removesuffix('/') + '/api/wallets/holds'
         headers = {}
         query_params = utils.get_query_params(operations.GetHoldsRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -259,6 +267,7 @@ class Wallets:
         url = base_url.removesuffix('/') + '/api/wallets/transactions'
         headers = {}
         query_params = utils.get_query_params(operations.GetTransactionsRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -286,6 +295,7 @@ class Wallets:
         
         url = utils.generate_url(operations.GetWalletRequest, base_url, '/api/wallets/wallets/{id}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -315,6 +325,7 @@ class Wallets:
         
         url = utils.generate_url(operations.ListBalancesRequest, base_url, '/api/wallets/wallets/{id}/balances', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -339,6 +350,7 @@ class Wallets:
         url = base_url.removesuffix('/') + '/api/wallets/wallets'
         headers = {}
         query_params = utils.get_query_params(operations.ListWalletsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -365,6 +377,7 @@ class Wallets:
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -390,6 +403,7 @@ class Wallets:
         
         url = utils.generate_url(operations.VoidHoldRequest, base_url, '/api/wallets/holds/{hold_id}/void', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -415,6 +429,7 @@ class Wallets:
         
         url = base_url.removesuffix('/') + '/api/wallets/_info'
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

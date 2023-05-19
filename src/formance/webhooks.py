@@ -31,6 +31,7 @@ class Webhooks:
         
         url = utils.generate_url(operations.ActivateConfigRequest, base_url, '/api/webhooks/configs/{id}/activate', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -64,6 +65,7 @@ class Webhooks:
         req_content_type, data, form = utils.serialize_request_body(request, "config_change_secret", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -89,6 +91,7 @@ class Webhooks:
         
         url = utils.generate_url(operations.DeactivateConfigRequest, base_url, '/api/webhooks/configs/{id}/deactivate', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -116,6 +119,7 @@ class Webhooks:
         
         url = utils.generate_url(operations.DeleteConfigRequest, base_url, '/api/webhooks/configs/{id}', request)
         headers = {}
+        headers['Accept'] = '*/*'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -138,6 +142,7 @@ class Webhooks:
         url = base_url.removesuffix('/') + '/api/webhooks/configs'
         headers = {}
         query_params = utils.get_query_params(operations.GetManyConfigsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -176,6 +181,7 @@ class Webhooks:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['Accept'] = 'application/json;q=1, text/plain;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -204,6 +210,7 @@ class Webhooks:
         
         url = utils.generate_url(operations.TestConfigRequest, base_url, '/api/webhooks/configs/{id}/test', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

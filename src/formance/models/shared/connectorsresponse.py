@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import connector_enum as shared_connector_enum
+from ..shared import connector as shared_connector
 from dataclasses_json import Undefined, dataclass_json
 from formance import utils
 from typing import Optional
@@ -13,7 +13,7 @@ from typing import Optional
 class ConnectorsResponseData:
     
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
-    provider: Optional[shared_connector_enum.ConnectorEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider'), 'exclude': lambda f: f is None }})
+    provider: Optional[shared_connector.Connector] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider'), 'exclude': lambda f: f is None }})
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

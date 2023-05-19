@@ -3,10 +3,10 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import connector_enum as shared_connector_enum
+from ..shared import connector as shared_connector
 from ..shared import paymentadjustment as shared_paymentadjustment
 from ..shared import paymentmetadata as shared_paymentmetadata
-from ..shared import paymentstatus_enum as shared_paymentstatus_enum
+from ..shared import paymentstatus as shared_paymentstatus
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
@@ -14,7 +14,7 @@ from formance import utils
 from marshmallow import fields
 from typing import Any
 
-class PaymentSchemeEnum(str, Enum):
+class PaymentScheme(str, Enum):
     VISA = 'visa'
     MASTERCARD = 'mastercard'
     AMEX = 'amex'
@@ -34,7 +34,7 @@ class PaymentSchemeEnum(str, Enum):
     UNKNOWN = 'unknown'
     OTHER = 'other'
 
-class PaymentTypeEnum(str, Enum):
+class PaymentType(str, Enum):
     PAY_IN = 'PAY-IN'
     PAYOUT = 'PAYOUT'
     TRANSFER = 'TRANSFER'
@@ -52,10 +52,10 @@ class Payment:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     initial_amount: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('initialAmount') }})
     metadata: list[shared_paymentmetadata.PaymentMetadata] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
-    provider: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider') }})
+    provider: shared_connector.Connector = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider') }})
     raw: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw') }})
     reference: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reference') }})
-    scheme: PaymentSchemeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scheme') }})
-    status: shared_paymentstatus_enum.PaymentStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    type: PaymentTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    scheme: PaymentScheme = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scheme') }})
+    status: shared_paymentstatus.PaymentStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    type: PaymentType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     

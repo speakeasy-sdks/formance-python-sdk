@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connector_enum as shared_connector_enum
+from ..shared import connector as shared_connector
 from ..shared import taskscursor as shared_taskscursor
 from typing import Optional
 
@@ -11,7 +11,7 @@ from typing import Optional
 @dataclasses.dataclass
 class ListConnectorTasksRequest:
     
-    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
+    connector: shared_connector.Connector = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
     r"""The name of the connector."""
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     r"""Parameter used in pagination requests. Maximum page size is set to 15.

@@ -39,6 +39,7 @@ class Script:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.RunScriptRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

@@ -82,8 +82,8 @@ class Formance:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "0.17.0"
-    _gen_version: str = "2.30.0"
+    _sdk_version: str = "0.18.0"
+    _gen_version: str = "2.31.0"
 
     def __init__(self,
                  security: shared.Security = None,
@@ -280,6 +280,7 @@ class Formance:
         
         url = base_url.removesuffix('/') + '/api/auth/_info'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -303,6 +304,7 @@ class Formance:
         
         url = base_url.removesuffix('/') + '/api/payments/_info'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -326,6 +328,7 @@ class Formance:
         
         url = base_url.removesuffix('/') + '/api/search/_info'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

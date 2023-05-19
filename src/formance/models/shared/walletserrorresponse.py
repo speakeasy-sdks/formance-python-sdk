@@ -6,7 +6,7 @@ from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from formance import utils
 
-class WalletsErrorResponseErrorCodeEnum(str, Enum):
+class WalletsErrorResponseErrorCode(str, Enum):
     VALIDATION = 'VALIDATION'
 
 
@@ -15,6 +15,6 @@ class WalletsErrorResponseErrorCodeEnum(str, Enum):
 class WalletsErrorResponse:
     r"""Error"""
     
-    error_code: WalletsErrorResponseErrorCodeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorCode') }})
+    error_code: WalletsErrorResponseErrorCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorCode') }})
     error_message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorMessage') }})
     

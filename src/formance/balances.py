@@ -30,6 +30,7 @@ class Balances:
         url = utils.generate_url(operations.GetBalancesRequest, base_url, '/api/ledger/{ledger}/balances', request)
         headers = {}
         query_params = utils.get_query_params(operations.GetBalancesRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -58,6 +59,7 @@ class Balances:
         url = utils.generate_url(operations.GetBalancesAggregatedRequest, base_url, '/api/ledger/{ledger}/aggregate/balances', request)
         headers = {}
         query_params = utils.get_query_params(operations.GetBalancesAggregatedRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

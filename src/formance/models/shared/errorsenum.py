@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class ErrorsEnumEnum(str, Enum):
+class ErrorsEnum(str, Enum):
     INTERNAL = 'INTERNAL'
     INSUFFICIENT_FUND = 'INSUFFICIENT_FUND'
     VALIDATION = 'VALIDATION'

@@ -6,7 +6,7 @@ from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from formance import utils
 
-class ErrorErrorCodeEnum(str, Enum):
+class ErrorErrorCode(str, Enum):
     VALIDATION = 'VALIDATION'
 
 
@@ -15,6 +15,6 @@ class ErrorErrorCodeEnum(str, Enum):
 class Error:
     r"""General error"""
     
-    error_code: ErrorErrorCodeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorCode') }})
+    error_code: ErrorErrorCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorCode') }})
     error_message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errorMessage') }})
     

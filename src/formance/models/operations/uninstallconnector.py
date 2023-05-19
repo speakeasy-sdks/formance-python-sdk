@@ -3,14 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connector_enum as shared_connector_enum
+from ..shared import connector as shared_connector
 from typing import Optional
 
 
 @dataclasses.dataclass
 class UninstallConnectorRequest:
     
-    connector: shared_connector_enum.ConnectorEnum = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
+    connector: shared_connector.Connector = dataclasses.field(metadata={'path_param': { 'field_name': 'connector', 'style': 'simple', 'explode': False }})
     r"""The name of the connector."""
     
 

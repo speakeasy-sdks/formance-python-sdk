@@ -108,7 +108,7 @@ src/formance/models/operations/paymentsgetserverinfo.py
 src/formance/models/operations/searchgetserverinfo.py
 src/formance/models/operations/__init__.py
 src/formance/models/shared/errorresponse.py
-src/formance/models/shared/errorsenum_enum.py
+src/formance/models/shared/errorsenum.py
 src/formance/models/shared/accountresponse.py
 src/formance/models/shared/accountwithvolumesandbalances.py
 src/formance/models/shared/accountscursorresponse.py
@@ -150,13 +150,13 @@ src/formance/models/shared/runworkflowresponse.py
 src/formance/models/shared/stripetransferrequest.py
 src/formance/models/shared/taskresponse.py
 src/formance/models/shared/taskstripe.py
-src/formance/models/shared/paymentstatus_enum.py
+src/formance/models/shared/paymentstatus.py
 src/formance/models/shared/taskwise.py
 src/formance/models/shared/taskcurrencycloud.py
 src/formance/models/shared/taskdummypay.py
 src/formance/models/shared/taskmodulr.py
 src/formance/models/shared/taskbankingcircle.py
-src/formance/models/shared/connector_enum.py
+src/formance/models/shared/connector.py
 src/formance/models/shared/paymentresponse.py
 src/formance/models/shared/payment.py
 src/formance/models/shared/paymentmetadata.py

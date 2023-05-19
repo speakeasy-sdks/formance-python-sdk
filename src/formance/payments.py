@@ -36,6 +36,7 @@ class Payments:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -61,6 +62,7 @@ class Payments:
         
         url = utils.generate_url(operations.GetConnectorTaskRequest, base_url, '/api/payments/connectors/{connector}/tasks/{taskId}', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -84,6 +86,7 @@ class Payments:
         
         url = utils.generate_url(operations.GetPaymentRequest, base_url, '/api/payments/payments/{paymentId}', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -114,6 +117,7 @@ class Payments:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['Accept'] = '*/*'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -135,6 +139,7 @@ class Payments:
         
         url = base_url.removesuffix('/') + '/api/payments/connectors'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -160,6 +165,7 @@ class Payments:
         
         url = base_url.removesuffix('/') + '/api/payments/connectors/configs'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -186,6 +192,7 @@ class Payments:
         url = utils.generate_url(operations.ListConnectorTasksRequest, base_url, '/api/payments/connectors/{connector}/tasks', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListConnectorTasksRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -210,6 +217,7 @@ class Payments:
         url = base_url.removesuffix('/') + '/api/payments/payments'
         headers = {}
         query_params = utils.get_query_params(operations.ListPaymentsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -234,6 +242,7 @@ class Payments:
         url = base_url.removesuffix('/') + '/api/payments/accounts'
         headers = {}
         query_params = utils.get_query_params(operations.PaymentslistAccountsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -259,6 +268,7 @@ class Payments:
         
         url = utils.generate_url(operations.ReadConnectorConfigRequest, base_url, '/api/payments/connectors/{connector}/config', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -285,6 +295,7 @@ class Payments:
         
         url = utils.generate_url(operations.ResetConnectorRequest, base_url, '/api/payments/connectors/{connector}/reset', request)
         headers = {}
+        headers['Accept'] = '*/*'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -306,6 +317,7 @@ class Payments:
         
         url = utils.generate_url(operations.UninstallConnectorRequest, base_url, '/api/payments/connectors/{connector}', request)
         headers = {}
+        headers['Accept'] = '*/*'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

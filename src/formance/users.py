@@ -31,6 +31,7 @@ class Users:
         
         url = base_url.removesuffix('/') + '/api/auth/users'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -56,6 +57,7 @@ class Users:
         
         url = utils.generate_url(operations.ReadUserRequest, base_url, '/api/auth/users/{userId}', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

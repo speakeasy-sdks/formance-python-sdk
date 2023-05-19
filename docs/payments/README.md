@@ -69,7 +69,7 @@ s = formance.Formance(
 )
 
 req = operations.GetConnectorTaskRequest(
-    connector=shared.ConnectorEnum.BANKING_CIRCLE,
+    connector=shared.Connector.BANKING_CIRCLE,
     task_id='ipsa',
 )
 
@@ -125,7 +125,7 @@ req = operations.InstallConnectorRequest(
     request_body=shared.WiseConfig(
         api_key='XXX',
     ),
-    connector=shared.ConnectorEnum.CURRENCY_CLOUD,
+    connector=shared.Connector.CURRENCY_CLOUD,
 )
 
 res = s.payments.install_connector(req)
@@ -197,7 +197,7 @@ s = formance.Formance(
 )
 
 req = operations.ListConnectorTasksRequest(
-    connector=shared.ConnectorEnum.STRIPE,
+    connector=shared.Connector.STRIPE,
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     page_size=39187,
 )
@@ -287,7 +287,7 @@ s = formance.Formance(
 )
 
 req = operations.ReadConnectorConfigRequest(
-    connector=shared.ConnectorEnum.CURRENCY_CLOUD,
+    connector=shared.Connector.CURRENCY_CLOUD,
 )
 
 res = s.payments.read_connector_config(req)
@@ -315,7 +315,7 @@ s = formance.Formance(
 )
 
 req = operations.ResetConnectorRequest(
-    connector=shared.ConnectorEnum.DUMMY_PAY,
+    connector=shared.Connector.DUMMY_PAY,
 )
 
 res = s.payments.reset_connector(req)
@@ -341,7 +341,7 @@ s = formance.Formance(
 )
 
 req = operations.UninstallConnectorRequest(
-    connector=shared.ConnectorEnum.BANKING_CIRCLE,
+    connector=shared.Connector.BANKING_CIRCLE,
 )
 
 res = s.payments.uninstall_connector(req)

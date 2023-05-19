@@ -8,7 +8,7 @@ from ..shared import errorresponse as shared_errorresponse
 from enum import Enum
 from typing import Any, Optional
 
-class ListAccountsBalanceOperatorEnum(str, Enum):
+class ListAccountsBalanceOperator(str, Enum):
     r"""Operator used for the filtering of balances can be greater than/equal, less than/equal, greater than, less than, equal or not."""
     GTE = 'gte'
     LTE = 'lte'
@@ -29,9 +29,9 @@ class ListAccountsRequest:
     r"""Pagination cursor, will return accounts after given address, in descending order."""
     balance: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balance', 'style': 'form', 'explode': True }})
     r"""Filter accounts by their balance (default operator is gte)"""
-    balance_operator: Optional[ListAccountsBalanceOperatorEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balanceOperator', 'style': 'form', 'explode': True }})
+    balance_operator: Optional[ListAccountsBalanceOperator] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balanceOperator', 'style': 'form', 'explode': True }})
     r"""Operator used for the filtering of balances can be greater than/equal, less than/equal, greater than, less than, equal or not."""
-    balance_operator_deprecated: Optional[ListAccountsBalanceOperatorEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balance_operator', 'style': 'form', 'explode': True }})
+    balance_operator_deprecated: Optional[ListAccountsBalanceOperator] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'balance_operator', 'style': 'form', 'explode': True }})
     r"""Operator used for the filtering of balances can be greater than/equal, less than/equal, greater than, less than, equal or not.
     Deprecated, please use `balanceOperator` instead.
     

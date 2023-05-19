@@ -123,8 +123,8 @@ req = operations.ListAccountsRequest(
     address='users:.+',
     after='users:003',
     balance=2400,
-    balance_operator=operations.ListAccountsBalanceOperatorEnum.GTE,
-    balance_operator_deprecated=operations.ListAccountsBalanceOperatorEnum.GTE,
+    balance_operator=operations.ListAccountsBalanceOperator.GTE,
+    balance_operator_deprecated=operations.ListAccountsBalanceOperator.GTE,
     cursor='aHR0cHM6Ly9nLnBhZ2UvTmVrby1SYW1lbj9zaGFyZQ==',
     ledger='ledger001',
     metadata={

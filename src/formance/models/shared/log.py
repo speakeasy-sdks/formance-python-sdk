@@ -10,7 +10,7 @@ from formance import utils
 from marshmallow import fields
 from typing import Any
 
-class LogTypeEnum(str, Enum):
+class LogType(str, Enum):
     NEW_TRANSACTION = 'NEW_TRANSACTION'
     SET_METADATA = 'SET_METADATA'
 
@@ -23,5 +23,5 @@ class Log:
     date_: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     hash: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hash') }})
     id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    type: LogTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: LogType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     

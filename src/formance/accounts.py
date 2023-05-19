@@ -34,6 +34,7 @@ class Accounts:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -60,6 +61,7 @@ class Accounts:
         url = utils.generate_url(operations.CountAccountsRequest, base_url, '/api/ledger/{ledger}/accounts', request)
         headers = {}
         query_params = utils.get_query_params(operations.CountAccountsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -86,6 +88,7 @@ class Accounts:
         
         url = utils.generate_url(operations.GetAccountRequest, base_url, '/api/ledger/{ledger}/accounts/{address}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -116,6 +119,7 @@ class Accounts:
         url = utils.generate_url(operations.ListAccountsRequest, base_url, '/api/ledger/{ledger}/accounts', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListAccountsRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
