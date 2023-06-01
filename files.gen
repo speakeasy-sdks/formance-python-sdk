@@ -16,6 +16,7 @@ src/formance/users.py
 src/formance/wallets.py
 src/formance/webhooks.py
 src/formance/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/formance/__init__.py
