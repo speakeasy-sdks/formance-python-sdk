@@ -1,3 +1,4 @@
+src/formance/sdkconfiguration.py
 src/formance/accounts.py
 src/formance/balances.py
 src/formance/clients.py
