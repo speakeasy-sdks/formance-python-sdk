@@ -24,7 +24,7 @@ from formance.models import operations, shared
 from typing import Optional
 
 class Formance:
-    r"""Open, modular foundation for unique payments flows
+    r"""Formance Stack API: Open, modular foundation for unique payments flows
     
     # Introduction
     This API is documented in **OpenAPI format**.

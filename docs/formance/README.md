@@ -2,7 +2,7 @@
 
 ## Overview
 
-Open, modular foundation for unique payments flows
+Formance Stack API: Open, modular foundation for unique payments flows
 
 # Introduction
 This API is documented in **OpenAPI format**.
