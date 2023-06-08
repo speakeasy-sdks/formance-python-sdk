@@ -26,7 +26,7 @@ from formance.models import operations
 
 s = formance.Formance(
     security=shared.Security(
-        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
+        authorization="",
     ),
 )
 
@@ -56,7 +56,7 @@ from formance.models import operations, shared
 
 s = formance.Formance(
     security=shared.Security(
-        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
+        authorization="",
     ),
 )
 
@@ -85,7 +85,7 @@ from formance.models import operations
 
 s = formance.Formance(
     security=shared.Security(
-        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
+        authorization="",
     ),
 )
 
@@ -111,7 +111,7 @@ from formance.models import operations
 
 s = formance.Formance(
     security=shared.Security(
-        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
+        authorization="",
     ),
 )
 
@@ -137,7 +137,7 @@ from formance.models import operations
 
 s = formance.Formance(
     security=shared.Security(
-        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
+        authorization="",
     ),
 )
 
@@ -173,7 +173,7 @@ from formance.models import shared
 
 s = formance.Formance(
     security=shared.Security(
-        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
+        authorization="",
     ),
 )
 
@@ -206,7 +206,7 @@ from formance.models import operations
 
 s = formance.Formance(
     security=shared.Security(
-        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
+        authorization="",
     ),
 )
 

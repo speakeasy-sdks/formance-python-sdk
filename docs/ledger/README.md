@@ -20,7 +20,7 @@ from formance.models import operations
 
 s = formance.Formance(
     security=shared.Security(
-        authorization="Bearer YOUR_ACCESS_TOKEN_HERE",
+        authorization="",
     ),
 )
 
