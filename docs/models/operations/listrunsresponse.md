@@ -1,0 +1,12 @@
+# ListRunsResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `content_type`                                                                        | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `error`                                                                               | [Optional[shared.Error]](../../models/shared/error.md)                                | :heavy_minus_sign:                                                                    | General error                                                                         |
+| `list_runs_response`                                                                  | [Optional[shared.ListRunsResponse]](../../models/shared/listrunsresponse.md)          | :heavy_minus_sign:                                                                    | List of workflow occurrences                                                          |
+| `status_code`                                                                         | *int*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_minus_sign:                                                                    | N/A                                                                                   |

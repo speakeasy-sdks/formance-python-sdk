@@ -5,19 +5,26 @@ import dataclasses
 import requests as requests_http
 from ..shared import getholdsresponse as shared_getholdsresponse
 from ..shared import walletserrorresponse as shared_walletserrorresponse
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class GetHoldsMetadata:
+    r"""Filter holds by metadata key value pairs. Nested objects can be used as seen in the example below."""
+    pass
+
 
 
 @dataclasses.dataclass
 class GetHoldsRequest:
-    
     cursor: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     r"""Parameter used in pagination requests.
     Set to the value of next for the next page of results.
     Set to the value of previous for the previous page of results.
     No other parameters can be set when the pagination token is set.
     """
-    metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
+    metadata: Optional[GetHoldsMetadata] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
     r"""Filter holds by metadata key value pairs. Nested objects can be used as seen in the example below."""
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
     r"""The maximum number of results to return per page"""
@@ -25,9 +32,11 @@ class GetHoldsRequest:
     r"""The wallet to filter on"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetHoldsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_holds_response: Optional[shared_getholdsresponse.GetHoldsResponse] = dataclasses.field(default=None)
@@ -36,3 +45,4 @@ class GetHoldsResponse:
     wallets_error_response: Optional[shared_walletserrorresponse.WalletsErrorResponse] = dataclasses.field(default=None)
     r"""Error"""
     
+

@@ -6,12 +6,19 @@ import requests as requests_http
 from ..shared import errorresponse as shared_errorresponse
 from ..shared import transactionscursorresponse as shared_transactionscursorresponse
 from datetime import datetime
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class ListTransactionsMetadata:
+    r"""Filter transactions by metadata key value pairs. Nested objects can be used as seen in the example below."""
+    pass
+
 
 
 @dataclasses.dataclass
 class ListTransactionsRequest:
-    
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
     r"""Name of the ledger."""
     account: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'account', 'style': 'form', 'explode': True }})
@@ -37,7 +44,7 @@ class ListTransactionsRequest:
     
     Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
-    metadata: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
+    metadata: Optional[ListTransactionsMetadata] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'metadata', 'style': 'deepObject', 'explode': True }})
     r"""Filter transactions by metadata key value pairs. Nested objects can be used as seen in the example below."""
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pageSize', 'style': 'form', 'explode': True }})
     r"""The maximum number of results to return per page."""
@@ -73,9 +80,11 @@ class ListTransactionsRequest:
     """
     
 
+
+
+
 @dataclasses.dataclass
 class ListTransactionsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_response: Optional[shared_errorresponse.ErrorResponse] = dataclasses.field(default=None)
@@ -84,3 +93,4 @@ class ListTransactionsResponse:
     transactions_cursor_response: Optional[shared_transactionscursorresponse.TransactionsCursorResponse] = dataclasses.field(default=None)
     r"""OK"""
     
+

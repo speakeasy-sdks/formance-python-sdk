@@ -8,9 +8,9 @@ from ..shared import scriptresponse as shared_scriptresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class RunScriptRequest:
-    
     ledger: str = dataclasses.field(metadata={'path_param': { 'field_name': 'ledger', 'style': 'simple', 'explode': False }})
     r"""Name of the ledger."""
     script: shared_script.Script = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -18,9 +18,11 @@ class RunScriptRequest:
     r"""Set the preview mode. Preview mode doesn't add the logs to the database or publish a message to the message broker."""
     
 
+
+
+
 @dataclasses.dataclass
 class RunScriptResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
@@ -33,3 +35,4 @@ class RunScriptResponse:
       - `errorMessage` and `error_message` (deprecated): contains a human-readable indication of what went wrong, for example that an account had insufficient funds, or that there was an error in the provided Numscript.
     """
     
+

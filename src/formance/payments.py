@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from formance import utils
 from formance.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class Payments:
     r"""Everything related to Payments"""
@@ -38,7 +38,7 @@ class Payments:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.StripeTransferResponse])
                 res.stripe_transfer_response = out
 
         return res
