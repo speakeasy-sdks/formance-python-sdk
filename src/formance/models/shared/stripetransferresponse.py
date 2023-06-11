@@ -8,4 +8,5 @@ import dataclasses
 @dataclasses.dataclass
 class StripeTransferResponse:
     r"""OK"""
-    pass
+    
+

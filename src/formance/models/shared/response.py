@@ -41,7 +41,8 @@ class ResponseCursor:
 @dataclasses.dataclass
 class ResponseData:
     r"""The payload"""
-    pass
+    
+
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
